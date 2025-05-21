@@ -1,0 +1,25 @@
+{
+  "name": "building-land-data-service",
+  "version": "1.0.0",
+  "description": "Service that fetches building and land data from public APIs and updates Airtable",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "airtable": "^0.12.2",
+    "axios": "^1.6.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "node-cron": "^3.0.3",
+    "xml-js": "^1.6.11"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

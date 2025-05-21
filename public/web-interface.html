@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>건축물 및 토지 정보 관리 시스템</title>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            margin-top: 0;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .card {
+            margin-bottom: 25px;
+            background-color: #fff;
+            border-radius: 6px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #3498db;
+        }
+        .job-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        button:disabled {
+            background-color: #95a5a6;
+            cursor: not-allowed;
+        }
+        .job-status {
+            padding: 15px;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            margin-top: 15px;
+        }
+        pre {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            font-size: 14px;
+        }
+        .log-container {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 15px;
+        }
+        .status-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .status-running {
+            background-color: #3498db;
+            color: white;
+        }
+        .status-success {
+            background-color: #2ecc71;
+            color: white;
+        }
+        .status-failed {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .status-idle {
+            background-color: #95a5a6;
+            color: white;
+        }
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>건축물 및 토지 정보 관리 시스템</h1>
+        
+        <div class="card">
+            <h2>작업 실행</h2>
+            <div class="job-controls">
+                <button id="run-building-job">건축물 정보 작업 실행</button>
+                <button id="run-land-job">토지 정보 작업 실행</button>
+                <button id="run-all-jobs">모든 작업 실행</button>
+            </div>
+            
+            <div class="job-status">
+                <div class="status-info">
+                    <span>현재 상태:</span>
+                    <span class="status-badge status-idle" id="job-status">대기 중</span>
+                </div>
+                <div id="job-result"></div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>시스템 정보</h2>
+            <div class="status-info">
+                <span>서버 상태:</span>
+                <span class="status-badge" id="server-status">확인 중...</span>
+            </div>
+            <div id="system-info"></div>
+        </div>
+        
+        <div class="card">
+            <h2>작업 로그</h2>
+            <div class="log-container">
+                <pre id="job-log">작업 로그가 여기에 표시됩니다.</pre>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 건축물 및 토지 정보 관리 시스템 | 버전 1.0.0</p>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buildingJobButton = document.getElementById('run-building-job');
+            const landJobButton = document.getElementById('run-land-job');
+            const allJobsButton = document.getElementById('run-all-jobs');
+            const jobStatus = document.getElementById('job-status');
+            const jobResult = document.getElementById('job-result');
+            const jobLog = document.getElementById('job-log');
+            const serverStatus = document.getElementById('server-status');
+            const systemInfo = document.getElementById('system-info');
+            
+            // 시스템 상태 확인
+            async function checkServerStatus() {
+                try {
+                    const response = await fetch('/health');
+                    const data = await response.json();
+                    
+                    if (response.ok) {
+                        serverStatus.textContent = '정상';
+                        serverStatus.className = 'status-badge status-success';
+                        
+                        systemInfo.innerHTML = `
+                            <p><strong>서버 시간:</strong> ${new Date(data.timestamp).toLocaleString()}</p>
+                            <p><strong>버전:</strong> ${data.version || '1.0.0'}</p>
+                        `;
+                    } else {
+                        serverStatus.textContent = '문제 발생';
+                        serverStatus.className = 'status-badge status-failed';
+                        systemInfo.innerHTML = `<p>서버 상태 확인 중 오류가 발생했습니다.</p>`;
+                    }
+                } catch (error) {
+                    serverStatus.textContent = '연결 오류';
+                    serverStatus.className = 'status-badge status-failed';
+                    systemInfo.innerHTML = `<p>서버에 연결할 수 없습니다. 서버가 실행 중인지 확인하세요.</p>`;
+                }
+            }
+            
+            // 작업 실행 함수
+            async function runJob(endpoint) {
+                // 버튼 비활성화
+                buildingJobButton.disabled = true;
+                landJobButton.disabled = true;
+                allJobsButton.disabled = true;
+                
+                // 상태 업데이트
+                jobStatus.textContent = '실행 중';
+                jobStatus.className = 'status-badge status-running';
+                jobResult.innerHTML = '<p>작업을 실행 중입니다. 완료될 때까지 기다려주세요...</p>';
+                
+                try {
+                    const response = await fetch(endpoint);
+                    const data = await response.json();
+                    
+                    if (response.ok) {
+                        jobStatus.textContent = '완료';
+                        jobStatus.className = 'status-badge status-success';
+                        
+                        let resultHTML = `<p><strong>${data.message}</strong></p>`;
+                        
+                        if (data.result) {
+                            if (data.result.building && data.result.land) {
+                                // 모든 작업 실행 결과
+                                resultHTML += `
+                                    <p>건축물 정보 작업: ${data.result.building.success}/${data.result.building.total} 레코드 성공</p>
+                                    <p>토지 정보 작업: ${data.result.land.success}/${data.result.land.total} 레코드 성공</p>
+                                `;
+                            } else {
+                                // 단일 작업 실행 결과
+                                resultHTML += `<p>${data.result.success}/${data.result.total} 레코드가 성공적으로 처리되었습니다.</p>`;
+                            }
+                            resultHTML += `<p>완료 시간: ${new Date().toLocaleString()}</p>`;
+                        }
+                        
+                        jobResult.innerHTML = resultHTML;
+                        
+                        // 로그 업데이트
+                        const logEntry = `[${new Date().toLocaleString()}] ${data.message}\n${JSON.stringify(data.result, null, 2)}\n\n`;
+                        jobLog.textContent = logEntry + jobLog.textContent;
+                    } else {
+                        jobStatus.textContent = '실패';
+                        jobStatus.className = 'status-badge status-failed';
+                        jobResult.innerHTML = `<p>작업 실행 중 오류: ${data.error || '알 수 없는 오류'}</p>`;
+                        
+                        // 로그 업데이트
+                        const logEntry = `[${new Date().toLocaleString()}] 오류 발생: ${data.error}\n\n`;
+                        jobLog.textContent = logEntry + jobLog.textContent;
+                    }
+                } catch (error) {
+                    jobStatus.textContent = '실패';
+                    jobStatus.className = 'status-badge status-failed';
+                    jobResult.innerHTML = `<p>작업 실행 중 오류: ${error.message}</p>`;
+                    
+                    // 로그 업데이트
+                    const logEntry = `[${new Date().toLocaleString()}] 오류 발생: ${error.message}\n\n`;
+                    jobLog.textContent = logEntry + jobLog.textContent;
+                } finally {
+                    // 버튼 다시 활성화
+                    buildingJobButton.disabled = false;
+                    landJobButton.disabled = false;
+                    allJobsButton.disabled = false;
+                }
+            }
+            
+            // 이벤트 리스너 등록
+            buildingJobButton.addEventListener('click', () => runJob('/run-building-job'));
+            landJobButton.addEventListener('click', () => runJob('/run-land-job'));
+            allJobsButton.addEventListener('click', () => runJob('/run-all-jobs'));
+            
+            // 초기 상태 확인
+            checkServerStatus();
+            
+            // 주기적으로 서버 상태 확인 (1분마다)
+            setInterval(checkServerStatus, 60000);
+        });
+    </script>
+</body>
+</html>

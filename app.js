@@ -159,19 +159,44 @@ const parseAddress = (address) => {
 // 공통 함수: 구글 스크립트를 통해 코드 가져오기
 const getBuildingCodes = async (addressData) => {
   try {
+    console.log('주소 데이터로 건축물 코드 조회 요청:', JSON.stringify(addressData));
+    
     const response = await axios.post(
-      process.env.GOOGLE_SCRIPT_URL,
+      process.env.GOOGLE_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbycxM4pNuDvzZp_iTsteqxWu738wMWfpPcLbzpHYNDD3CLg7oU1sFXycQfyZcounUDPVQ/exec',
       [addressData]
     );
     
-    if (response.data && response.data.시군구코드 && response.data.법정동코드) {
+    console.log('Google 스크립트 API 응답:', JSON.stringify(response.data));
+    
+    // API 응답이 배열인 경우 처리
+    if (Array.isArray(response.data) && response.data.length > 0) {
+      const data = response.data[0];
+      if (data.시군구코드 !== undefined && data.법정동코드 !== undefined) {
+        // 숫자 타입을 문자열로 변환 (필요한 경우)
+        const 시군구코드 = String(data.시군구코드);
+        const 법정동코드 = String(data.법정동코드);
+        
+        return {
+          ...addressData,
+          시군구코드,
+          법정동코드
+        };
+      }
+    }
+    // API 응답이 객체인 경우 처리
+    else if (response.data && response.data.시군구코드 !== undefined && response.data.법정동코드 !== undefined) {
+      // 숫자 타입을 문자열로 변환 (필요한 경우)
+      const 시군구코드 = String(response.data.시군구코드);
+      const 법정동코드 = String(response.data.법정동코드);
+      
       return {
         ...addressData,
-        시군구코드: response.data.시군구코드,
-        법정동코드: response.data.법정동코드
+        시군구코드,
+        법정동코드
       };
     }
     
+    console.warn('API에서 코드를 찾을 수 없음, 응답:', JSON.stringify(response.data));
     throw new Error('Building codes not found in response');
   } catch (error) {
     console.error('Error getting building codes:', error);

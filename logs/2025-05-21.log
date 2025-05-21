@@ -1,0 +1,11 @@
+[2025-05-21T13:34:51.912Z] [INFO] Server running on port 3000
+[2025-05-21T13:34:51.912Z] [INFO] Visit http://localhost:3000 to manage the service
+[2025-05-21T13:40:19.448Z] [ERROR] Error: ENOENT: no such file or directory, stat '/home/building-service/public/index.html'
+[2025-05-21T13:42:09.159Z] [ERROR] Error: ENOENT: no such file or directory, stat '/home/building-service/public/index.html'
+[2025-05-21T13:42:38.014Z] [ERROR] Error: ENOENT: no such file or directory, stat '/home/building-service/public/index.html'
+[2025-05-21T13:44:00.237Z] [INFO] Server running on port 3000
+[2025-05-21T13:44:00.237Z] [INFO] Visit http://localhost:3000 to manage the service
+[2025-05-21T13:44:34.541Z] [ERROR] Error: ENOENT: no such file or directory, stat '/home/building-service/public/index.html'
+[2025-05-21T13:46:46.880Z] [ERROR] Error: ENOENT: no such file or directory, stat '/home/building-service/public/index.html'
+[2025-05-21T13:52:36.937Z] [INFO] Server running on port 3000
+[2025-05-21T13:52:36.937Z] [INFO] Visit http://localhost:3000 to manage the service

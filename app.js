@@ -116,9 +116,9 @@ const cleanupLogs = () => {
 // 매일 자정에 로그 정리 실행
 cron.schedule('0 0 * * *', cleanupLogs);
 
-// 에어테이블 설정
+// 에어테이블 설정 - Access Token 사용
 const airtableBase = new Airtable({
-  apiKey: process.env.AIRTABLE_API_KEY
+  apiKey: process.env.AIRTABLE_ACCESS_TOKEN || process.env.AIRTABLE_API_KEY
 }).base(process.env.AIRTABLE_BASE_ID);
 
 // 건축물 정보용 테이블/뷰
@@ -441,78 +441,102 @@ const processBuildingRecord = async (record) => {
 // 토지 정보 처리 기능
 // =================================
 
-// 토지 정보 조회
+// VWorld API를 사용한 토지 정보 조회
 const getLandData = async (pnu) => {
   try {
-    const url = 'https://ed0p5bo2xj.apigw.ntruss.com/n8n_product/n8n_landinfo/';
-    const response = await axios.get(url, {
-      params: {
-        pnu: pnu,
-        format: 'xml',
-        numOfRows: 10,
-        pageNo: 10
-      }
+    console.log('VWorld API로 토지 정보 조회 요청 - PNU:', pnu);
+    
+    const HttpUrl = "http://api.vworld.kr/ned/data/getLandCharacteristics";
+    const currentYear = new Date().getFullYear().toString();
+    
+    const params = new URLSearchParams({
+      key: process.env.VWORLD_APIKEY,
+      domain: 'goldenrabbit.biz', // 실제 도메인으로 변경 필요
+      pnu: pnu,
+      stdrYear: currentYear, // 현재 연도 사용
+      format: 'json', // JSON 형식으로 변경
+      numOfRows: '10',
+      pageNo: '1'
     });
     
-    // XML을 JSON으로 변환
-    const jsonData = convert.xml2js(response.data, {
-      compact: true,
-      spaces: 2,
-      alwaysArray: ['field']
-    });
+    const fullUrl = `${HttpUrl}?${params.toString()}`;
+    console.log('VWorld API 요청 URL:', fullUrl);
     
-    return jsonData;
+    const response = await axios.get(fullUrl);
+    
+    console.log('VWorld API 응답:', JSON.stringify(response.data, null, 2));
+    
+    return response.data;
   } catch (error) {
-    console.error('Error fetching land data:', error);
-    return null;
+    console.error('Error fetching land data from VWorld:', error);
+    
+    // VWorld API 오류 시 더 자세한 로그
+    if (error.response) {
+      console.error('VWorld API 응답 상태:', error.response.status);
+      console.error('VWorld API 응답 데이터:', error.response.data);
+    }
+    
+    throw error;
   }
 };
 
-// 토지 데이터 추출
+// VWorld API 응답에서 토지 데이터 추출
 const extractLandItems = (jsonData) => {
   try {
-    if (!jsonData || !jsonData.response || !jsonData.response.fields || !jsonData.response.fields.field) {
+    console.log('VWorld API 응답 데이터 추출 시작');
+    
+    // VWorld API 응답 구조 확인
+    if (!jsonData || !jsonData.landCharacteristics) {
+      console.log('VWorld API 응답에서 landCharacteristics를 찾을 수 없음');
       return null;
     }
     
-    const fields = jsonData.response.fields.field;
+    const landData = jsonData.landCharacteristics;
     
-    // 가장 최근 데이터 찾기
-    const latestField = fields.reduce((latest, current) => {
-      return new Date(current.lastUpdtDt._text) > new Date(latest.lastUpdtDt._text) ? current : latest;
-    });
+    // 응답이 배열인지 확인
+    const dataArray = Array.isArray(landData) ? landData : [landData];
     
-    // 반환할 데이터 가공
+    if (dataArray.length === 0) {
+      console.log('토지 데이터가 비어있음');
+      return null;
+    }
+    
+    // 첫 번째 데이터 사용 (필요시 가장 최신 데이터 선택 로직 추가)
+    const latestField = dataArray[0];
+    
+    console.log('추출된 토지 데이터:', JSON.stringify(latestField, null, 2));
+    
+    // VWorld API 응답 형식에 맞게 데이터 매핑
     return {
-      "pnu": latestField.pnu._text,
-      "IdCode": latestField.ldCode._text,
-      "IdCodeNm": latestField.ldCodeNm._text,
-      "regstrSeCode": latestField.regstrSeCode._text,
-      "regstrSeCodeNm": latestField.regstrSeCodeNm._text,
-      "mnnmSlno": latestField.mnnmSlno._text,
-      "ladSn": latestField.ladSn._text,
-      "stdrYear": latestField.stdrYear._text,
-      "stdrMt": latestField.stdrMt._text,
-      "lndcgrCode": latestField.lndcgrCode._text,
-      "lndcgrCodeNm": latestField.lndcgrCodeNm._text,
-      "lndpclAr": latestField.lndpclAr._text,
-      "prposArea1": latestField.prposArea1._text,
-      "prposArea1Nm": latestField.prposArea1Nm._text,
-      "prposArea2": latestField.prposArea2._text,
-      "prposArea2Nm": latestField.prposArea2Nm._text,
-      "ladUseSittn": latestField.ladUseSittn._text,
-      "ladUseSittnNm": latestField.ladUseSittnNm._text,
-      "tpgrphHgCode": latestField.tpgrphHgCode._text,
-      "tpgrphHgCodeNm": latestField.tpgrphHgCodeNm._text,
-      "tpgrphFrmCode": latestField.tpgrphFrmCode._text,
-      "tpgrphFrmCodeNm": latestField.tpgrphFrmCodeNm._text,
-      "roadSideCode": latestField.roadSideCode._text,
-      "roadSideCodeNm": latestField.roadSideCodeNm._text,
-      "pblntfPclnd": latestField.pblntfPclnd._text,
-      "lastUpdtDt": latestField.lastUpdtDt._text
+      "pnu": latestField.pnu || '',
+      "IdCode": latestField.ldCode || '',
+      "IdCodeNm": latestField.ldCodeNm || '',
+      "regstrSeCode": latestField.regstrSeCode || '',
+      "regstrSeCodeNm": latestField.regstrSeCodeNm || '',
+      "mnnmSlno": latestField.mnnmSlno || latestField.jibun || '',
+      "ladSn": latestField.ladSn || '',
+      "stdrYear": latestField.stdrYear || '',
+      "stdrMt": latestField.stdrMt || '',
+      "lndcgrCode": latestField.lndcgrCode || '',
+      "lndcgrCodeNm": latestField.lndcgrCodeNm || '',
+      "lndpclAr": latestField.lndpclAr || latestField.area || '',
+      "prposArea1": latestField.prposArea1 || '',
+      "prposArea1Nm": latestField.prposArea1Nm || latestField.zoning || '',
+      "prposArea2": latestField.prposArea2 || '',
+      "prposArea2Nm": latestField.prposArea2Nm || '',
+      "ladUseSittn": latestField.ladUseSittn || '',
+      "ladUseSittnNm": latestField.ladUseSittnNm || latestField.landUse || '',
+      "tpgrphHgCode": latestField.tpgrphHgCode || '',
+      "tpgrphHgCodeNm": latestField.tpgrphHgCodeNm || latestField.topography || '',
+      "tpgrphFrmCode": latestField.tpgrphFrmCode || '',
+      "tpgrphFrmCodeNm": latestField.tpgrphFrmCodeNm || latestField.landForm || '',
+      "roadSideCode": latestField.roadSideCode || '',
+      "roadSideCodeNm": latestField.roadSideCodeNm || latestField.roadSide || '',
+      "pblntfPclnd": latestField.pblntfPclnd || latestField.publicPrice || '',
+      "lastUpdtDt": latestField.lastUpdtDt || latestField.updateDate || new Date().toISOString().split('T')[0]
     };
   } catch (error) {
-    console.error('Error extracting land items:', error);
+    console.error('Error extracting VWorld land items:', error);
     return null;
   }
 };
@@ -651,15 +675,15 @@ const processLandRecord = async (record) => {
 // 공통 작업 실행 기능
 // =================================
 
-// 건축물 정보 작업 실행
+// 건축물 정보 작업 실행 (약 620~660번 줄)
 const runBuildingJob = async () => {
   try {
     console.log('Starting building information job...');
     
-    // 에어테이블에서 레코드 가져오기
+    // 에어테이블에서 건축물 레코드 가져오기
     const records = await airtableBase(process.env.AIRTABLE_BUILDING_TABLE)
       .select({
-        view: process.env.AIRTABLE_BUILDING_VIEW
+        view: process.env.AIRTABLE_BUILDING_VIEW // 건축물용 뷰
       })
       .all();
     
@@ -689,15 +713,15 @@ const runBuildingJob = async () => {
   }
 };
 
-// 토지 정보 작업 실행
+// 토지 정보 작업 실행 (약 670~710번 줄)
 const runLandJob = async () => {
   try {
     console.log('Starting land information job...');
     
-    // 에어테이블에서 레코드 가져오기
+    // 에어테이블에서 토지 레코드 가져오기
     const records = await airtableBase(process.env.AIRTABLE_LAND_TABLE)
       .select({
-        view: process.env.AIRTABLE_LAND_VIEW
+        view: process.env.AIRTABLE_LAND_VIEW // 토지용 뷰
       })
       .all();
     

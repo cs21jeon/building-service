@@ -4,11 +4,11 @@ const express = require('express');
 const cron = require('node-cron');
 const axios = require('axios');
 const Airtable = require('airtable');
-const { convert } = require('xml-js');
+const convert = require('xml-js');
 const path = require('path');
 const fs = require('fs');
 
-const app = express();
+const app = express();  
 const PORT = process.env.BUILDING_SERVICE_PORT || 3000;
 
 // 로그 디렉토리 설정

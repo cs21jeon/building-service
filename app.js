@@ -448,47 +448,36 @@ const getLandData = async (pnu) => {
     
     const HttpUrl = "http://api.vworld.kr/ned/data/getLandCharacteristics";
     
-    // 기준연도를 최근 년도들로 시도
-    const possibleYears = ['2024', '2023', '2022', '2021'];
+    // 전년도만 사용 (현재 2025년이므로 2024년)
+    const currentYear = new Date().getFullYear();
+    const lastYear = (currentYear - 1).toString();
     
-    for (const year of possibleYears) {
-      try {
-        const params = new URLSearchParams({
-          key: process.env.VWORLD_APIKEY,
-          domain: 'localhost', // 개발환경에서는 localhost 사용
-          pnu: pnu,
-          stdrYear: year,
-          format: 'json',
-          numOfRows: '10',
-          pageNo: '1'
-        });
-        
-        const fullUrl = `${HttpUrl}?${params.toString()}`;
-        console.log(`VWorld API 요청 (${year}년):`, fullUrl);
-        
-        const response = await axios.get(fullUrl);
-        
-        console.log(`VWorld API 응답 (${year}년):`, JSON.stringify(response.data, null, 2));
-        
-        // 데이터가 있는지 확인
-        if (response.data && response.data.response && 
-            parseInt(response.data.response.totalCount) > 0) {
-          console.log(`${year}년 데이터 발견!`);
-          return response.data;
-        } else {
-          console.log(`${year}년 데이터 없음, 다음 연도 시도...`);
-        }
-      } catch (yearError) {
-        console.log(`${year}년 요청 실패:`, yearError.message);
-        continue;
-      }
+    const params = new URLSearchParams({
+      key: process.env.VWORLD_APIKEY,
+      domain: 'localhost',
+      pnu: pnu,
+      stdrYear: lastYear,
+      format: 'json',
+      numOfRows: '10',
+      pageNo: '1'
+    });
+    
+    const fullUrl = `${HttpUrl}?${params.toString()}`;
+    console.log(`VWorld API 요청 (${lastYear}년):`, fullUrl);
+    
+    const response = await axios.get(fullUrl);
+    console.log(`VWorld API 응답 (${lastYear}년):`, JSON.stringify(response.data, null, 2));
+    
+    // VWorld API는 landCharacteristicss 형태로 응답
+    if (response.data && response.data.landCharacteristicss && 
+        response.data.landCharacteristicss.field && 
+        Array.isArray(response.data.landCharacteristicss.field) &&
+        response.data.landCharacteristicss.field.length > 0) {
+      console.log(`${lastYear}년 데이터 발견!`);
+      return response.data;
+    } else {
+      throw new Error(`${lastYear}년 토지 데이터를 찾을 수 없음`);
     }
-    
-    // 모든 연도에서 데이터를 찾지 못한 경우
-    console.log('모든 기준연도에서 데이터를 찾을 수 없음');
-    
-    // 대안: 다른 API 엔드포인트 시도
-    return await tryAlternativeVWorldAPI(pnu);
     
   } catch (error) {
     console.error('Error fetching land data from VWorld:', error);
@@ -501,22 +490,23 @@ const extractLandItems = (jsonData) => {
   try {
     console.log('VWorld API 응답 데이터 추출 시작');
     
-    // VWorld API 응답 구조 확인
-    if (!jsonData || !jsonData.response) {
-      console.log('VWorld API 응답에서 response를 찾을 수 없음');
+    // VWorld API는 landCharacteristicss.field 구조로 응답
+    if (!jsonData || !jsonData.landCharacteristicss || !jsonData.landCharacteristicss.field) {
+      console.log('VWorld API 응답에서 landCharacteristicss.field를 찾을 수 없음');
       return null;
     }
     
-    // result 배열에서 데이터 추출
-    const landData = jsonData.response.result;
+    const landData = jsonData.landCharacteristicss.field;
     
-    if (!landData || !Array.isArray(landData) || landData.length === 0) {
-      console.log('VWorld API 응답에서 result 데이터를 찾을 수 없음');
+    if (!Array.isArray(landData) || landData.length === 0) {
+      console.log('VWorld API 응답에서 field 데이터를 찾을 수 없음');
       return null;
     }
     
-    // 첫 번째 데이터 사용
-    const latestField = landData[0];
+    // 가장 최신 데이터 선택 (lastUpdtDt 기준)
+    const latestField = landData.reduce((latest, current) => {
+      return new Date(current.lastUpdtDt) > new Date(latest.lastUpdtDt) ? current : latest;
+    });
     
     console.log('추출된 토지 데이터:', JSON.stringify(latestField, null, 2));
     
@@ -527,27 +517,27 @@ const extractLandItems = (jsonData) => {
       "IdCodeNm": latestField.ldCodeNm || '',
       "regstrSeCode": latestField.regstrSeCode || '',
       "regstrSeCodeNm": latestField.regstrSeCodeNm || '',
-      "mnnmSlno": latestField.mnnmSlno || latestField.jibun || '',
-      "ladSn": latestField.ladSn || '1',
+      "mnnmSlno": latestField.mnnmSlno || '',
+      "ladSn": latestField.ladSn || '',
       "stdrYear": latestField.stdrYear || '',
       "stdrMt": latestField.stdrMt || '',
       "lndcgrCode": latestField.lndcgrCode || '',
       "lndcgrCodeNm": latestField.lndcgrCodeNm || '',
-      "lndpclAr": latestField.lndpclAr || latestField.area || '',
+      "lndpclAr": latestField.lndpclAr || '',
       "prposArea1": latestField.prposArea1 || '',
-      "prposArea1Nm": latestField.prposArea1Nm || latestField.zoning || '',
+      "prposArea1Nm": latestField.prposArea1Nm || '',
       "prposArea2": latestField.prposArea2 || '',
       "prposArea2Nm": latestField.prposArea2Nm || '',
       "ladUseSittn": latestField.ladUseSittn || '',
-      "ladUseSittnNm": latestField.ladUseSittnNm || latestField.landUse || '',
+      "ladUseSittnNm": latestField.ladUseSittnNm || '',
       "tpgrphHgCode": latestField.tpgrphHgCode || '',
-      "tpgrphHgCodeNm": latestField.tpgrphHgCodeNm || latestField.topography || '',
+      "tpgrphHgCodeNm": latestField.tpgrphHgCodeNm || '',
       "tpgrphFrmCode": latestField.tpgrphFrmCode || '',
-      "tpgrphFrmCodeNm": latestField.tpgrphFrmCodeNm || latestField.landForm || '',
+      "tpgrphFrmCodeNm": latestField.tpgrphFrmCodeNm || '',
       "roadSideCode": latestField.roadSideCode || '',
-      "roadSideCodeNm": latestField.roadSideCodeNm || latestField.roadSide || '',
-      "pblntfPclnd": latestField.pblntfPclnd || latestField.publicPrice || latestField.indvdLandPrice || '',
-      "lastUpdtDt": latestField.lastUpdtDt || latestField.updateDate || new Date().toISOString().split('T')[0]
+      "roadSideCodeNm": latestField.roadSideCodeNm || '',
+      "pblntfPclnd": latestField.pblntfPclnd || '',
+      "lastUpdtDt": latestField.lastUpdtDt || ''
     };
   } catch (error) {
     console.error('Error extracting VWorld land items:', error);
@@ -558,6 +548,8 @@ const extractLandItems = (jsonData) => {
 // 토지 데이터 가공
 const processLandData = (data) => {
   try {
+    console.log('토지 데이터 가공 시작:', JSON.stringify(data, null, 2));
+    
     // 주소 가공
     const addressParts = data.IdCodeNm.split(" ");
     let selectedRegion = "";
@@ -567,47 +559,50 @@ const processLandData = (data) => {
     
     // 주소 패턴에 따른 추출
     if (addressParts.some(part => part.includes("특별시")) || addressParts.some(part => part.includes("광역시"))) {
-      // ~특별시 또는 ~광역시로 시작하는 패턴
       const guIndex = addressParts.findIndex(part => part.endsWith("구"));
       const gunIndex = addressParts.findIndex(part => part.endsWith("군"));
       
       if (guIndex !== -1) {
-        // ~특별시/광역시 ~구 ~동/로/가
         selectedRegion = `${addressParts[guIndex]} ${lastElement}`;
       } else if (gunIndex !== -1) {
-        // ~광역시 ~군 ~읍/면 ~리
         selectedRegion = `${addressParts[gunIndex]} ${lastElement}`;
       }
     } else {
-      // ~도로 시작하는 패턴
       const siIndex = addressParts.findIndex(part => part.endsWith("시"));
       const gunIndex = addressParts.findIndex(part => part.endsWith("군"));
       const guIndex = addressParts.findIndex(part => part.endsWith("구"));
       
       if (siIndex !== -1 && guIndex !== -1) {
-        // ~도 ~시 ~구 (~동/~읍/~면) (~리)
         selectedRegion = `${addressParts[guIndex]} ${lastElement}`;
       } else if (siIndex !== -1 && guIndex === -1) {
-        // ~도 ~시 (~동/~읍/~면) (~리)
         selectedRegion = `${addressParts[siIndex]} ${lastElement}`;
       } else if (gunIndex !== -1) {
-        // ~도 ~군 (~읍/~면) ~리
         selectedRegion = `${addressParts[gunIndex]} ${lastElement}`;
       }
     }
     
-    return {
+    // 숫자 데이터 타입 변환 및 검증
+    const parseNumber = (value) => {
+      if (!value || value === '') return null;
+      const parsed = parseFloat(value);
+      return isNaN(parsed) ? null : parsed;
+    };
+    
+    const result = {
       "지번 주소": `${selectedRegion} ${data.mnnmSlno}`,
-      "토지면적(㎡)": data.lndpclAr,
-      "용도지역": data.prposArea1Nm,
-      "용도지역기타": data.prposArea2Nm,
-      "토지이용상황": data.ladUseSittnNm,
-      "지형": data.tpgrphHgCodeNm,
-      "토지형상": data.tpgrphFrmCodeNm,
-      "도로접면": data.roadSideCodeNm,
-      "공시지가(원/㎡)": data.pblntfPclnd,
+      "토지면적(㎡)": parseNumber(data.lndpclAr),
+      "용도지역": data.prposArea1Nm || '',
+      "용도지역기타": data.prposArea2Nm || '',
+      "토지이용상황": data.ladUseSittnNm || '',
+      "지형": data.tpgrphHgCodeNm || '',
+      "토지형상": data.tpgrphFrmCodeNm || '',
+      "도로접면": data.roadSideCodeNm || '',
+      "공시지가(원/㎡)": parseNumber(data.pblntfPclnd),
       "토지정보업데이트": new Date(data.lastUpdtDt).toISOString()
     };
+    
+    console.log('가공된 토지 데이터:', JSON.stringify(result, null, 2));
+    return result;
   } catch (error) {
     console.error('Error processing land data:', error);
     return null;
@@ -617,92 +612,34 @@ const processLandData = (data) => {
 // 에어테이블 토지 정보 업데이트
 const updateLandInfo = async (landData, recordId) => {
   try {
-    const updateData = {
-      "토지면적(㎡)": landData["토지면적(㎡)"],
-      "공시지가(원/㎡)": landData["공시지가(원/㎡)"],
-      "용도지역": landData["용도지역"]
-    };
+    // 유효한 데이터만 업데이트 객체에 포함
+    const updateData = {};
+    
+    if (landData["토지면적(㎡)"] !== null && landData["토지면적(㎡)"] !== undefined) {
+      updateData["토지면적(㎡)"] = landData["토지면적(㎡)"];
+    }
+    
+    if (landData["공시지가(원/㎡)"] !== null && landData["공시지가(원/㎡)"] !== undefined) {
+      updateData["공시지가(원/㎡)"] = landData["공시지가(원/㎡)"];
+    }
+    
+    if (landData["용도지역"] && landData["용도지역"].trim() !== '') {
+      updateData["용도지역"] = landData["용도지역"];
+    }
+    
+    console.log(`업데이트할 토지 데이터 (레코드 ${recordId}):`, JSON.stringify(updateData, null, 2));
+    
+    // 업데이트할 데이터가 있는지 확인
+    if (Object.keys(updateData).length === 0) {
+      console.log(`업데이트할 유효한 데이터가 없음 (레코드 ${recordId})`);
+      return false;
+    }
     
     await airtableBase(process.env.AIRTABLE_LAND_TABLE).update(recordId, updateData);
     console.log(`Updated Airtable land record ${recordId}`);
     return true;
   } catch (error) {
     console.error(`Error updating Airtable land record ${recordId}:`, error);
-    return false;
-  }
-};
-
-// 토지 레코드 처리
-const processLandRecord = async (record) => {
-  try {
-    // 주소 파싱
-    const parsedAddress = parseAddress(record['지번 주소']);
-    parsedAddress.id = record.id;
-    
-    if (parsedAddress.error) {
-      console.log(`Address error for land record ${record.id}: ${parsedAddress.error}`);
-      return false;
-    }
-    
-    // 코드 조회
-    const codes = await getBuildingCodes(parsedAddress);
-    
-    // PNU 생성
-    const pnu = generatePNU(codes);
-    if (!pnu) {
-      console.log(`Invalid PNU data for record ${record.id}`);
-      return false;
-    }
-    
-    // 토지 데이터 조회
-    let landData = null;
-    try {
-      landData = await getLandData(pnu);
-    } catch (apiError) {
-      console.log(`VWorld API 오류로 임시 데이터 사용: ${apiError.message}`);
-      
-      // 임시 데이터 생성 (개발/테스트 목적)
-      landData = {
-        response: {
-          result: [{
-            pnu: pnu,
-            ldCodeNm: parsedAddress.법정동,
-            mnnmSlno: `${parsedAddress.번}-${parsedAddress.지}`,
-            lndpclAr: '100.00', // 기본 면적
-            prposArea1Nm: '일반상업지역', // 기본 용도지역
-            pblntfPclnd: '500000', // 기본 공시지가
-            stdrYear: '2024',
-            lastUpdtDt: new Date().toISOString().split('T')[0]
-          }]
-        }
-      };
-    }
-    
-    if (!landData) {
-      console.log(`No land data found for record ${record.id}`);
-      return false;
-    }
-    
-    // 데이터 추출
-    const extractedItem = extractLandItems(landData);
-    if (!extractedItem) {
-      console.log(`Failed to extract land data for record ${record.id}`);
-      return false;
-    }
-    
-    // 데이터 가공
-    const processedData = processLandData(extractedItem);
-    if (!processedData) {
-      console.log(`Failed to process land data for record ${record.id}`);
-      return false;
-    }
-    
-    // 에어테이블 업데이트
-    const updated = await updateLandInfo(processedData, record.id);
-    
-    return updated;
-  } catch (error) {
-    console.error(`Error processing land record ${record.id}:`, error);
     return false;
   }
 };

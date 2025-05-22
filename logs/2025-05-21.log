@@ -9,3 +9,81 @@
 [2025-05-21T13:46:46.880Z] [ERROR] Error: ENOENT: no such file or directory, stat '/home/building-service/public/index.html'
 [2025-05-21T13:52:36.937Z] [INFO] Server running on port 3000
 [2025-05-21T13:52:36.937Z] [INFO] Visit http://localhost:3000 to manage the service
+[2025-05-21T14:14:49.186Z] [INFO] Server running on port 3000
+[2025-05-21T14:14:49.187Z] [INFO] Visit http://localhost:3000 to manage the service
+[2025-05-21T14:15:04.298Z] [INFO] [INFO] 처리할 레코드 발견, 작업 실행 중...
+[2025-05-21T14:15:04.298Z] [INFO] 처리할 레코드 발견, 작업 실행 중...
+[2025-05-21T14:15:04.298Z] [INFO] [INFO] Starting all jobs
+[2025-05-21T14:15:04.298Z] [INFO] Starting all jobs
+[2025-05-21T14:15:04.299Z] [INFO] Starting building information job...
+[2025-05-21T14:15:04.927Z] [INFO] Found 1 building records to process
+[2025-05-21T14:15:04.927Z] [INFO] 주소 데이터로 건축물 코드 조회 요청: {"시군구":"관악구","법정동":"봉천동","번":"1645","지":"0047","id":"recXh8BTGZYRyBm8F"}
+[2025-05-21T14:15:09.197Z] [INFO] Google 스크립트 API 응답: [{"시군구":"관악구","법정동":"봉천동","번":"1645","지":"0047","시군구코드":11620,"법정동코드":10100}]
+[2025-05-21T14:15:09.957Z] [ERROR] Error updating Airtable building record recXh8BTGZYRyBm8F: You are not authorized to perform this operation(NOT_AUTHORIZED)[Http code 403]
+[2025-05-21T14:15:10.957Z] [INFO] Processed 1 building records. 0 successful, 1 failed.
+[2025-05-21T14:15:10.957Z] [INFO] [INFO] Building job completed: {"total":1,"success":0}
+[2025-05-21T14:15:10.957Z] [INFO] Building job completed: {"total":1,"success":0}
+[2025-05-21T14:15:10.958Z] [INFO] Starting land information job...
+[2025-05-21T14:15:11.812Z] [INFO] Found 1 land records to process
+[2025-05-21T14:15:11.813Z] [INFO] 주소 데이터로 건축물 코드 조회 요청: {"시군구":"관악구","법정동":"봉천동","번":"1645","지":"0047","id":"recXh8BTGZYRyBm8F"}
+[2025-05-21T14:15:14.333Z] [INFO] Google 스크립트 API 응답: [{"시군구":"관악구","법정동":"봉천동","번":"1645","지":"0047","시군구코드":11620,"법정동코드":10100}]
+[2025-05-21T14:15:14.368Z] [ERROR] Error fetching land data: AxiosError: Request failed with status code 404
+[2025-05-21T14:15:14.368Z] [INFO] No land data found for record recXh8BTGZYRyBm8F
+[2025-05-21T14:15:15.369Z] [INFO] Processed 1 land records. 0 successful, 1 failed.
+[2025-05-21T14:15:15.369Z] [INFO] [INFO] Land job completed: {"total":1,"success":0}
+[2025-05-21T14:15:15.369Z] [INFO] Land job completed: {"total":1,"success":0}
+[2025-05-21T14:15:15.369Z] [INFO] [INFO] All jobs completed successfully
+[2025-05-21T14:15:15.369Z] [INFO] All jobs completed successfully
+[2025-05-21T14:16:01.593Z] [INFO] [INFO] 처리할 레코드 발견, 작업 실행 중...
+[2025-05-21T14:16:01.593Z] [INFO] 처리할 레코드 발견, 작업 실행 중...
+[2025-05-21T14:16:01.593Z] [INFO] [INFO] Starting all jobs
+[2025-05-21T14:16:01.593Z] [INFO] Starting all jobs
+[2025-05-21T14:16:01.593Z] [INFO] Starting building information job...
+[2025-05-21T14:16:02.219Z] [INFO] Found 1 building records to process
+[2025-05-21T14:16:02.220Z] [INFO] 주소 데이터로 건축물 코드 조회 요청: {"시군구":"관악구","법정동":"봉천동","번":"1645","지":"0047","id":"recXh8BTGZYRyBm8F"}
+[2025-05-21T14:16:05.630Z] [INFO] Google 스크립트 API 응답: [{"시군구":"관악구","법정동":"봉천동","번":"1645","지":"0047","시군구코드":11620,"법정동코드":10100}]
+[2025-05-21T14:16:06.957Z] [ERROR] Error updating Airtable building record recXh8BTGZYRyBm8F: You are not authorized to perform this operation(NOT_AUTHORIZED)[Http code 403]
+[2025-05-21T14:16:07.959Z] [INFO] Processed 1 building records. 0 successful, 1 failed.
+[2025-05-21T14:16:07.959Z] [INFO] [INFO] Building job completed: {"total":1,"success":0}
+[2025-05-21T14:16:07.960Z] [INFO] Building job completed: {"total":1,"success":0}
+[2025-05-21T14:16:07.960Z] [INFO] Starting land information job...
+[2025-05-21T14:16:08.659Z] [INFO] Found 1 land records to process
+[2025-05-21T14:16:08.659Z] [INFO] 주소 데이터로 건축물 코드 조회 요청: {"시군구":"관악구","법정동":"봉천동","번":"1645","지":"0047","id":"recXh8BTGZYRyBm8F"}
+[2025-05-21T14:16:11.692Z] [INFO] Google 스크립트 API 응답: [{"시군구":"관악구","법정동":"봉천동","번":"1645","지":"0047","시군구코드":11620,"법정동코드":10100}]
+[2025-05-21T14:16:11.722Z] [ERROR] Error fetching land data: AxiosError: Request failed with status code 404
+[2025-05-21T14:16:11.723Z] [INFO] No land data found for record recXh8BTGZYRyBm8F
+[2025-05-21T14:16:12.723Z] [INFO] Processed 1 land records. 0 successful, 1 failed.
+[2025-05-21T14:16:12.724Z] [INFO] [INFO] Land job completed: {"total":1,"success":0}
+[2025-05-21T14:16:12.724Z] [INFO] Land job completed: {"total":1,"success":0}
+[2025-05-21T14:16:12.724Z] [INFO] [INFO] All jobs completed successfully
+[2025-05-21T14:16:12.724Z] [INFO] All jobs completed successfully
+[2025-05-21T14:17:01.562Z] [INFO] [INFO] 처리할 레코드 발견, 작업 실행 중...
+[2025-05-21T14:17:01.562Z] [INFO] 처리할 레코드 발견, 작업 실행 중...
+[2025-05-21T14:17:01.563Z] [INFO] [INFO] Starting all jobs
+[2025-05-21T14:17:01.563Z] [INFO] Starting all jobs
+[2025-05-21T14:17:01.563Z] [INFO] Starting building information job...
+[2025-05-21T14:17:02.215Z] [INFO] Found 1 building records to process
+[2025-05-21T14:17:02.215Z] [INFO] 주소 데이터로 건축물 코드 조회 요청: {"시군구":"관악구","법정동":"봉천동","번":"1645","지":"0047","id":"recXh8BTGZYRyBm8F"}
+[2025-05-21T14:17:04.746Z] [INFO] Google 스크립트 API 응답: [{"시군구":"관악구","법정동":"봉천동","번":"1645","지":"0047","시군구코드":11620,"법정동코드":10100}]
+[2025-05-21T14:17:05.700Z] [ERROR] Error updating Airtable building record recXh8BTGZYRyBm8F: You are not authorized to perform this operation(NOT_AUTHORIZED)[Http code 403]
+[2025-05-21T14:17:06.701Z] [INFO] Processed 1 building records. 0 successful, 1 failed.
+[2025-05-21T14:17:06.701Z] [INFO] [INFO] Building job completed: {"total":1,"success":0}
+[2025-05-21T14:17:06.701Z] [INFO] Building job completed: {"total":1,"success":0}
+[2025-05-21T14:17:06.701Z] [INFO] Starting land information job...
+[2025-05-21T14:17:07.587Z] [INFO] Found 1 land records to process
+[2025-05-21T14:17:07.587Z] [INFO] 주소 데이터로 건축물 코드 조회 요청: {"시군구":"관악구","법정동":"봉천동","번":"1645","지":"0047","id":"recXh8BTGZYRyBm8F"}
+[2025-05-21T14:17:15.295Z] [INFO] Google 스크립트 API 응답: [{"시군구":"관악구","법정동":"봉천동","번":"1645","지":"0047","시군구코드":11620,"법정동코드":10100}]
+[2025-05-21T14:17:15.317Z] [ERROR] Error fetching land data: AxiosError: Request failed with status code 404
+[2025-05-21T14:17:15.317Z] [INFO] No land data found for record recXh8BTGZYRyBm8F
+[2025-05-21T14:17:16.317Z] [INFO] Processed 1 land records. 0 successful, 1 failed.
+[2025-05-21T14:17:16.317Z] [INFO] [INFO] Land job completed: {"total":1,"success":0}
+[2025-05-21T14:17:16.317Z] [INFO] Land job completed: {"total":1,"success":0}
+[2025-05-21T14:17:16.317Z] [INFO] [INFO] All jobs completed successfully
+[2025-05-21T14:17:16.317Z] [INFO] All jobs completed successfully
+[2025-05-21T14:18:01.967Z] [INFO] [INFO] 처리할 레코드 발견, 작업 실행 중...
+[2025-05-21T14:18:01.967Z] [INFO] 처리할 레코드 발견, 작업 실행 중...
+[2025-05-21T14:18:01.967Z] [INFO] [INFO] Starting all jobs
+[2025-05-21T14:18:01.967Z] [INFO] Starting all jobs
+[2025-05-21T14:18:01.967Z] [INFO] Starting building information job...
+[2025-05-21T14:18:02.807Z] [INFO] Found 1 building records to process
+[2025-05-21T14:18:02.807Z] [INFO] 주소 데이터로 건축물 코드 조회 요청: {"시군구":"관악구","법정동":"봉천동","번":"1645","지":"0047","id":"recXh8BTGZYRyBm8F"}

@@ -1,0 +1,528 @@
+[2025-06-27T05:01:01.911Z] [INFO] [INFO] 처리할 레코드 발견, 작업 실행 중...
+[2025-06-27T05:01:01.913Z] [INFO] 처리할 레코드 발견, 작업 실행 중...
+[2025-06-27T05:01:01.913Z] [INFO] [INFO] Starting all jobs
+[2025-06-27T05:01:01.913Z] [INFO] Starting all jobs
+[2025-06-27T05:01:01.913Z] [INFO] Starting building information job...
+[2025-06-27T05:01:02.768Z] [INFO] Found 2 building records to process
+[2025-06-27T05:01:02.773Z] [INFO] 주소 데이터로 건축물 코드 조회 요청: {"시군구":"구로구","법정동":"구로동","번":"0486","지":"0015","id":"rec5yZOQyOiRypQ3R"}
+[2025-06-27T05:01:08.115Z] [INFO] Google 스크립트 API 응답: [{"시군구":"구로구","법정동":"구로동","번":"0486","지":"0015","시군구코드":11530,"법정동코드":10200}]
+[2025-06-27T05:01:09.327Z] [INFO] Updated Airtable building record rec5yZOQyOiRypQ3R
+[2025-06-27T05:01:10.328Z] [INFO] 주소 데이터로 건축물 코드 조회 요청: {"시군구":"구로구","법정동":"구로동","번":"0487","지":"0030","id":"recrZMxZMuERZdsoV"}
+[2025-06-27T05:01:14.931Z] [INFO] Google 스크립트 API 응답: [{"시군구":"구로구","법정동":"구로동","번":"0487","지":"0030","시군구코드":11530,"법정동코드":10200}]
+[2025-06-27T05:01:16.023Z] [INFO] Updated Airtable building record recrZMxZMuERZdsoV
+[2025-06-27T05:01:17.024Z] [INFO] Processed 2 building records. 2 successful, 0 failed.
+[2025-06-27T05:01:17.024Z] [INFO] [INFO] Building job completed: {"total":2,"success":2}
+[2025-06-27T05:01:17.024Z] [INFO] Building job completed: {"total":2,"success":2}
+[2025-06-27T05:01:17.024Z] [INFO] Starting land information job...
+[2025-06-27T05:01:17.794Z] [INFO] Found 2 land records to process
+[2025-06-27T05:01:17.794Z] [INFO] Processing land record rec5yZOQyOiRypQ3R: 구로구 구로동 486-15
+[2025-06-27T05:01:17.794Z] [INFO] 주소 데이터로 건축물 코드 조회 요청: {"시군구":"구로구","법정동":"구로동","번":"0486","지":"0015","id":"rec5yZOQyOiRypQ3R"}
+[2025-06-27T05:01:22.986Z] [INFO] Google 스크립트 API 응답: [{"시군구":"구로구","법정동":"구로동","번":"0486","지":"0015","시군구코드":11530,"법정동코드":10200}]
+[2025-06-27T05:01:22.986Z] [INFO] VWorld API로 토지 정보 조회 요청 - PNU: 1153010200104860015
+[2025-06-27T05:01:22.987Z] [INFO] VWorld API 요청 (2024년): http://api.vworld.kr/ned/data/getLandCharacteristics?key=F640BE1E-8470-3590-BBD7-85F0A549B400&domain=localhost&pnu=1153010200104860015&stdrYear=2024&format=xml&numOfRows=10&pageNo=1
+[2025-06-27T05:01:23.020Z] [INFO] VWorld API XML 응답 (2024년): <response><numOfRows>10</numOfRows><pageNo>1</pageNo><totalCount>1</totalCount><fields><field><pnu>1153010200104860015</pnu><ldCode>1153010200</ldCode><ldCodeNm>서울특별시 구로구 구로동</ldCodeNm><regstrSeCode>1</regstrSeCode><regstrSeCodeNm>일반</regstrSeCodeNm><mnnmSlno>486-15</mnnmSlno><ladSn>7309</ladSn><stdrYear>2024</stdrYear><stdrMt>01</stdrMt><lndcgrCode>08</lndcgrCode><lndcgrCodeNm>대</lndcgrCodeNm><lndpclAr>76</lndpclAr><prposArea1>15</prposArea1><prposArea1Nm>제3종일반주거지역</prposArea1Nm><prposArea2>00</prposArea2><prposArea2Nm>지정되지않음</prposArea2Nm><ladUseSittn>330</ladUseSittn><ladUseSittnNm>주상기타</ladUseSittnNm><tpgrphHgCode>02</tpgrphHgCode><tpgrphHgCodeNm>평지</tpgrphHgCodeNm><tpgrphFrmCode>02</tpgrphFrmCode><tpgrphFrmCodeNm>가로장방</tpgrphFrmCodeNm><roadSideCode>08</roadSideCode><roadSideCodeNm>세로한면(가)</roadSideCodeNm><pblntfPclnd>3870000</pblntfPclnd><lastUpdtDt>2025-01-16</lastUpdtDt></field></fields></response>
+[2025-06-27T05:01:23.021Z] [INFO] 변환된 JSON 데이터: {
+  "response": {
+    "numOfRows": {
+      "_text": "10"
+    },
+    "pageNo": {
+      "_text": "1"
+    },
+    "totalCount": {
+      "_text": "1"
+    },
+    "fields": {
+      "field": {
+        "pnu": {
+          "_text": "1153010200104860015"
+        },
+        "ldCode": {
+          "_text": "1153010200"
+        },
+        "ldCodeNm": {
+          "_text": "서울특별시 구로구 구로동"
+        },
+        "regstrSeCode": {
+          "_text": "1"
+        },
+        "regstrSeCodeNm": {
+          "_text": "일반"
+        },
+        "mnnmSlno": {
+          "_text": "486-15"
+        },
+        "ladSn": {
+          "_text": "7309"
+        },
+        "stdrYear": {
+          "_text": "2024"
+        },
+        "stdrMt": {
+          "_text": "01"
+        },
+        "lndcgrCode": {
+          "_text": "08"
+        },
+        "lndcgrCodeNm": {
+          "_text": "대"
+        },
+        "lndpclAr": {
+          "_text": "76"
+        },
+        "prposArea1": {
+          "_text": "15"
+        },
+        "prposArea1Nm": {
+          "_text": "제3종일반주거지역"
+        },
+        "prposArea2": {
+          "_text": "00"
+        },
+        "prposArea2Nm": {
+          "_text": "지정되지않음"
+        },
+        "ladUseSittn": {
+          "_text": "330"
+        },
+        "ladUseSittnNm": {
+          "_text": "주상기타"
+        },
+        "tpgrphHgCode": {
+          "_text": "02"
+        },
+        "tpgrphHgCodeNm": {
+          "_text": "평지"
+        },
+        "tpgrphFrmCode": {
+          "_text": "02"
+        },
+        "tpgrphFrmCodeNm": {
+          "_text": "가로장방"
+        },
+        "roadSideCode": {
+          "_text": "08"
+        },
+        "roadSideCodeNm": {
+          "_text": "세로한면(가)"
+        },
+        "pblntfPclnd": {
+          "_text": "3870000"
+        },
+        "lastUpdtDt": {
+          "_text": "2025-01-16"
+        }
+      }
+    }
+  }
+}
+[2025-06-27T05:01:23.021Z] [INFO] 2024년 데이터 발견! (총 1건)
+[2025-06-27T05:01:23.022Z] [INFO] VWorld API 응답 데이터 추출 시작
+[2025-06-27T05:01:23.022Z] [INFO] 추출된 토지 데이터: {
+  "pnu": {
+    "_text": "1153010200104860015"
+  },
+  "ldCode": {
+    "_text": "1153010200"
+  },
+  "ldCodeNm": {
+    "_text": "서울특별시 구로구 구로동"
+  },
+  "regstrSeCode": {
+    "_text": "1"
+  },
+  "regstrSeCodeNm": {
+    "_text": "일반"
+  },
+  "mnnmSlno": {
+    "_text": "486-15"
+  },
+  "ladSn": {
+    "_text": "7309"
+  },
+  "stdrYear": {
+    "_text": "2024"
+  },
+  "stdrMt": {
+    "_text": "01"
+  },
+  "lndcgrCode": {
+    "_text": "08"
+  },
+  "lndcgrCodeNm": {
+    "_text": "대"
+  },
+  "lndpclAr": {
+    "_text": "76"
+  },
+  "prposArea1": {
+    "_text": "15"
+  },
+  "prposArea1Nm": {
+    "_text": "제3종일반주거지역"
+  },
+  "prposArea2": {
+    "_text": "00"
+  },
+  "prposArea2Nm": {
+    "_text": "지정되지않음"
+  },
+  "ladUseSittn": {
+    "_text": "330"
+  },
+  "ladUseSittnNm": {
+    "_text": "주상기타"
+  },
+  "tpgrphHgCode": {
+    "_text": "02"
+  },
+  "tpgrphHgCodeNm": {
+    "_text": "평지"
+  },
+  "tpgrphFrmCode": {
+    "_text": "02"
+  },
+  "tpgrphFrmCodeNm": {
+    "_text": "가로장방"
+  },
+  "roadSideCode": {
+    "_text": "08"
+  },
+  "roadSideCodeNm": {
+    "_text": "세로한면(가)"
+  },
+  "pblntfPclnd": {
+    "_text": "3870000"
+  },
+  "lastUpdtDt": {
+    "_text": "2025-01-16"
+  }
+}
+[2025-06-27T05:01:23.023Z] [INFO] _text 속성 제거 후 데이터: {
+  "pnu": "1153010200104860015",
+  "ldCode": "1153010200",
+  "ldCodeNm": "서울특별시 구로구 구로동",
+  "regstrSeCode": "1",
+  "regstrSeCodeNm": "일반",
+  "mnnmSlno": "486-15",
+  "ladSn": "7309",
+  "stdrYear": "2024",
+  "stdrMt": "01",
+  "lndcgrCode": "08",
+  "lndcgrCodeNm": "대",
+  "lndpclAr": "76",
+  "prposArea1": "15",
+  "prposArea1Nm": "제3종일반주거지역",
+  "prposArea2": "00",
+  "prposArea2Nm": "지정되지않음",
+  "ladUseSittn": "330",
+  "ladUseSittnNm": "주상기타",
+  "tpgrphHgCode": "02",
+  "tpgrphHgCodeNm": "평지",
+  "tpgrphFrmCode": "02",
+  "tpgrphFrmCodeNm": "가로장방",
+  "roadSideCode": "08",
+  "roadSideCodeNm": "세로한면(가)",
+  "pblntfPclnd": "3870000",
+  "lastUpdtDt": "2025-01-16"
+}
+[2025-06-27T05:01:23.023Z] [INFO] 토지 데이터 가공 시작: {
+  "pnu": "1153010200104860015",
+  "ldCode": "1153010200",
+  "ldCodeNm": "서울특별시 구로구 구로동",
+  "regstrSeCode": "1",
+  "regstrSeCodeNm": "일반",
+  "mnnmSlno": "486-15",
+  "ladSn": "7309",
+  "stdrYear": "2024",
+  "stdrMt": "01",
+  "lndcgrCode": "08",
+  "lndcgrCodeNm": "대",
+  "lndpclAr": "76",
+  "prposArea1": "15",
+  "prposArea1Nm": "제3종일반주거지역",
+  "prposArea2": "00",
+  "prposArea2Nm": "지정되지않음",
+  "ladUseSittn": "330",
+  "ladUseSittnNm": "주상기타",
+  "tpgrphHgCode": "02",
+  "tpgrphHgCodeNm": "평지",
+  "tpgrphFrmCode": "02",
+  "tpgrphFrmCodeNm": "가로장방",
+  "roadSideCode": "08",
+  "roadSideCodeNm": "세로한면(가)",
+  "pblntfPclnd": "3870000",
+  "lastUpdtDt": "2025-01-16"
+}
+[2025-06-27T05:01:23.023Z] [INFO] 가공된 토지 데이터: {
+  "지번 주소": "구로구 구로동 486-15",
+  "토지면적(㎡)": 76,
+  "용도지역": "제3종일반주거지역",
+  "공시지가(원/㎡)": 3870000,
+  "토지정보업데이트": "2025-01-16T00:00:00.000Z"
+}
+[2025-06-27T05:01:23.023Z] [INFO] 업데이트할 토지 데이터 (레코드 rec5yZOQyOiRypQ3R): {
+  "토지면적(㎡)": 76,
+  "공시지가(원/㎡)": 3870000,
+  "용도지역": "제3종일반주거지역"
+}
+[2025-06-27T05:01:23.927Z] [INFO] Updated Airtable land record rec5yZOQyOiRypQ3R
+[2025-06-27T05:01:24.927Z] [INFO] Processing land record recrZMxZMuERZdsoV: 구로구 구로동 487-30
+[2025-06-27T05:01:24.928Z] [INFO] 주소 데이터로 건축물 코드 조회 요청: {"시군구":"구로구","법정동":"구로동","번":"0487","지":"0030","id":"recrZMxZMuERZdsoV"}
+[2025-06-27T05:01:30.062Z] [INFO] Google 스크립트 API 응답: [{"시군구":"구로구","법정동":"구로동","번":"0487","지":"0030","시군구코드":11530,"법정동코드":10200}]
+[2025-06-27T05:01:30.062Z] [INFO] VWorld API로 토지 정보 조회 요청 - PNU: 1153010200104870030
+[2025-06-27T05:01:30.062Z] [INFO] VWorld API 요청 (2024년): http://api.vworld.kr/ned/data/getLandCharacteristics?key=F640BE1E-8470-3590-BBD7-85F0A549B400&domain=localhost&pnu=1153010200104870030&stdrYear=2024&format=xml&numOfRows=10&pageNo=1
+[2025-06-27T05:01:30.098Z] [INFO] VWorld API XML 응답 (2024년): <response><numOfRows>10</numOfRows><pageNo>1</pageNo><totalCount>1</totalCount><fields><field><pnu>1153010200104870030</pnu><ldCode>1153010200</ldCode><ldCodeNm>서울특별시 구로구 구로동</ldCodeNm><regstrSeCode>1</regstrSeCode><regstrSeCodeNm>일반</regstrSeCodeNm><mnnmSlno>487-30</mnnmSlno><ladSn>7379</ladSn><stdrYear>2024</stdrYear><stdrMt>01</stdrMt><lndcgrCode>08</lndcgrCode><lndcgrCodeNm>대</lndcgrCodeNm><lndpclAr>66</lndpclAr><prposArea1>14</prposArea1><prposArea1Nm>제2종일반주거지역</prposArea1Nm><prposArea2>00</prposArea2><prposArea2Nm>지정되지않음</prposArea2Nm><ladUseSittn>110</ladUseSittn><ladUseSittnNm>단독</ladUseSittnNm><tpgrphHgCode>02</tpgrphHgCode><tpgrphHgCodeNm>평지</tpgrphHgCodeNm><tpgrphFrmCode>03</tpgrphFrmCode><tpgrphFrmCodeNm>세로장방</tpgrphFrmCodeNm><roadSideCode>10</roadSideCode><roadSideCodeNm>세로한면(불)</roadSideCodeNm><pblntfPclnd>2686000</pblntfPclnd><lastUpdtDt>2025-01-16</lastUpdtDt></field></fields></response>
+[2025-06-27T05:01:30.099Z] [INFO] 변환된 JSON 데이터: {
+  "response": {
+    "numOfRows": {
+      "_text": "10"
+    },
+    "pageNo": {
+      "_text": "1"
+    },
+    "totalCount": {
+      "_text": "1"
+    },
+    "fields": {
+      "field": {
+        "pnu": {
+          "_text": "1153010200104870030"
+        },
+        "ldCode": {
+          "_text": "1153010200"
+        },
+        "ldCodeNm": {
+          "_text": "서울특별시 구로구 구로동"
+        },
+        "regstrSeCode": {
+          "_text": "1"
+        },
+        "regstrSeCodeNm": {
+          "_text": "일반"
+        },
+        "mnnmSlno": {
+          "_text": "487-30"
+        },
+        "ladSn": {
+          "_text": "7379"
+        },
+        "stdrYear": {
+          "_text": "2024"
+        },
+        "stdrMt": {
+          "_text": "01"
+        },
+        "lndcgrCode": {
+          "_text": "08"
+        },
+        "lndcgrCodeNm": {
+          "_text": "대"
+        },
+        "lndpclAr": {
+          "_text": "66"
+        },
+        "prposArea1": {
+          "_text": "14"
+        },
+        "prposArea1Nm": {
+          "_text": "제2종일반주거지역"
+        },
+        "prposArea2": {
+          "_text": "00"
+        },
+        "prposArea2Nm": {
+          "_text": "지정되지않음"
+        },
+        "ladUseSittn": {
+          "_text": "110"
+        },
+        "ladUseSittnNm": {
+          "_text": "단독"
+        },
+        "tpgrphHgCode": {
+          "_text": "02"
+        },
+        "tpgrphHgCodeNm": {
+          "_text": "평지"
+        },
+        "tpgrphFrmCode": {
+          "_text": "03"
+        },
+        "tpgrphFrmCodeNm": {
+          "_text": "세로장방"
+        },
+        "roadSideCode": {
+          "_text": "10"
+        },
+        "roadSideCodeNm": {
+          "_text": "세로한면(불)"
+        },
+        "pblntfPclnd": {
+          "_text": "2686000"
+        },
+        "lastUpdtDt": {
+          "_text": "2025-01-16"
+        }
+      }
+    }
+  }
+}
+[2025-06-27T05:01:30.099Z] [INFO] 2024년 데이터 발견! (총 1건)
+[2025-06-27T05:01:30.099Z] [INFO] VWorld API 응답 데이터 추출 시작
+[2025-06-27T05:01:30.099Z] [INFO] 추출된 토지 데이터: {
+  "pnu": {
+    "_text": "1153010200104870030"
+  },
+  "ldCode": {
+    "_text": "1153010200"
+  },
+  "ldCodeNm": {
+    "_text": "서울특별시 구로구 구로동"
+  },
+  "regstrSeCode": {
+    "_text": "1"
+  },
+  "regstrSeCodeNm": {
+    "_text": "일반"
+  },
+  "mnnmSlno": {
+    "_text": "487-30"
+  },
+  "ladSn": {
+    "_text": "7379"
+  },
+  "stdrYear": {
+    "_text": "2024"
+  },
+  "stdrMt": {
+    "_text": "01"
+  },
+  "lndcgrCode": {
+    "_text": "08"
+  },
+  "lndcgrCodeNm": {
+    "_text": "대"
+  },
+  "lndpclAr": {
+    "_text": "66"
+  },
+  "prposArea1": {
+    "_text": "14"
+  },
+  "prposArea1Nm": {
+    "_text": "제2종일반주거지역"
+  },
+  "prposArea2": {
+    "_text": "00"
+  },
+  "prposArea2Nm": {
+    "_text": "지정되지않음"
+  },
+  "ladUseSittn": {
+    "_text": "110"
+  },
+  "ladUseSittnNm": {
+    "_text": "단독"
+  },
+  "tpgrphHgCode": {
+    "_text": "02"
+  },
+  "tpgrphHgCodeNm": {
+    "_text": "평지"
+  },
+  "tpgrphFrmCode": {
+    "_text": "03"
+  },
+  "tpgrphFrmCodeNm": {
+    "_text": "세로장방"
+  },
+  "roadSideCode": {
+    "_text": "10"
+  },
+  "roadSideCodeNm": {
+    "_text": "세로한면(불)"
+  },
+  "pblntfPclnd": {
+    "_text": "2686000"
+  },
+  "lastUpdtDt": {
+    "_text": "2025-01-16"
+  }
+}
+[2025-06-27T05:01:30.099Z] [INFO] _text 속성 제거 후 데이터: {
+  "pnu": "1153010200104870030",
+  "ldCode": "1153010200",
+  "ldCodeNm": "서울특별시 구로구 구로동",
+  "regstrSeCode": "1",
+  "regstrSeCodeNm": "일반",
+  "mnnmSlno": "487-30",
+  "ladSn": "7379",
+  "stdrYear": "2024",
+  "stdrMt": "01",
+  "lndcgrCode": "08",
+  "lndcgrCodeNm": "대",
+  "lndpclAr": "66",
+  "prposArea1": "14",
+  "prposArea1Nm": "제2종일반주거지역",
+  "prposArea2": "00",
+  "prposArea2Nm": "지정되지않음",
+  "ladUseSittn": "110",
+  "ladUseSittnNm": "단독",
+  "tpgrphHgCode": "02",
+  "tpgrphHgCodeNm": "평지",
+  "tpgrphFrmCode": "03",
+  "tpgrphFrmCodeNm": "세로장방",
+  "roadSideCode": "10",
+  "roadSideCodeNm": "세로한면(불)",
+  "pblntfPclnd": "2686000",
+  "lastUpdtDt": "2025-01-16"
+}
+[2025-06-27T05:01:30.099Z] [INFO] 토지 데이터 가공 시작: {
+  "pnu": "1153010200104870030",
+  "ldCode": "1153010200",
+  "ldCodeNm": "서울특별시 구로구 구로동",
+  "regstrSeCode": "1",
+  "regstrSeCodeNm": "일반",
+  "mnnmSlno": "487-30",
+  "ladSn": "7379",
+  "stdrYear": "2024",
+  "stdrMt": "01",
+  "lndcgrCode": "08",
+  "lndcgrCodeNm": "대",
+  "lndpclAr": "66",
+  "prposArea1": "14",
+  "prposArea1Nm": "제2종일반주거지역",
+  "prposArea2": "00",
+  "prposArea2Nm": "지정되지않음",
+  "ladUseSittn": "110",
+  "ladUseSittnNm": "단독",
+  "tpgrphHgCode": "02",
+  "tpgrphHgCodeNm": "평지",
+  "tpgrphFrmCode": "03",
+  "tpgrphFrmCodeNm": "세로장방",
+  "roadSideCode": "10",
+  "roadSideCodeNm": "세로한면(불)",
+  "pblntfPclnd": "2686000",
+  "lastUpdtDt": "2025-01-16"
+}
+[2025-06-27T05:01:30.099Z] [INFO] 가공된 토지 데이터: {
+  "지번 주소": "구로구 구로동 487-30",
+  "토지면적(㎡)": 66,
+  "용도지역": "제2종일반주거지역",
+  "공시지가(원/㎡)": 2686000,
+  "토지정보업데이트": "2025-01-16T00:00:00.000Z"
+}
+[2025-06-27T05:01:30.099Z] [INFO] 업데이트할 토지 데이터 (레코드 recrZMxZMuERZdsoV): {
+  "토지면적(㎡)": 66,
+  "공시지가(원/㎡)": 2686000,
+  "용도지역": "제2종일반주거지역"
+}
+[2025-06-27T05:01:31.044Z] [INFO] Updated Airtable land record recrZMxZMuERZdsoV
+[2025-06-27T05:01:32.045Z] [INFO] Processed 2 land records. 2 successful, 0 failed.
+[2025-06-27T05:01:32.045Z] [INFO] [INFO] Land job completed: {"total":2,"success":2}
+[2025-06-27T05:01:32.045Z] [INFO] Land job completed: {"total":2,"success":2}
+[2025-06-27T05:01:32.045Z] [INFO] [INFO] All jobs completed successfully
+[2025-06-27T05:01:32.045Z] [INFO] All jobs completed successfully
+[2025-06-27T15:00:00.550Z] [INFO] [INFO] 오래된 로그 파일 1개 삭제 완료
+[2025-06-27T15:00:00.550Z] [INFO] 오래된 로그 파일 1개 삭제 완료

@@ -269,3 +269,5 @@
 [2025-06-28T02:09:15.029Z] [INFO] Land job completed: {"total":1,"success":1}
 [2025-06-28T02:09:15.029Z] [INFO] [INFO] All jobs completed successfully
 [2025-06-28T02:09:15.029Z] [INFO] All jobs completed successfully
+[2025-06-28T15:00:00.202Z] [INFO] [INFO] 오래된 로그 파일 1개 삭제 완료
+[2025-06-28T15:00:00.202Z] [INFO] 오래된 로그 파일 1개 삭제 완료

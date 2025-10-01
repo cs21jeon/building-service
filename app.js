@@ -547,6 +547,19 @@ const processBuildingRecord = async (record) => {
     // 건축물 데이터 조회
     const buildingData = await getBuildingData(buildingCodes);
     
+    // ========== 추가: API 응답 검증 ==========
+    const hasValidResponse = buildingData && 
+                           buildingData.response && 
+                           buildingData.response.body && 
+                           buildingData.response.body.items;
+    
+    if (!hasValidResponse) {
+      logger.error(`❌ 건축물 API 응답 없음: ${record.id}`);
+      recordRetryAttempt(record.id, false);
+      return { success: false, skipped: false };
+    }
+    // ========== 끝 ==========
+    
     // 데이터 추출 및 처리
     const extractedItems = extractBuildingItems(buildingData);
     
@@ -561,6 +574,19 @@ const processBuildingRecord = async (record) => {
     
     // 필드명 매핑
     const mappedData = mapBuildingFieldNames(processedData);
+    
+    // ========== 추가: 의미있는 데이터 검증 ==========
+    const hasValidData = mappedData["대지면적(㎡)"] || 
+                        mappedData["연면적(㎡)"] || 
+                        mappedData["주용도"] || 
+                        mappedData["도로명주소"];
+    
+    if (!hasValidData) {
+      logger.error(`❌ 의미있는 건축물 데이터 없음: ${record.id}`);
+      recordRetryAttempt(record.id, false);
+      return { success: false, skipped: false };
+    }
+    // ========== 끝 ==========
     
     // 에어테이블 업데이트
     const updated = await updateBuildingInfo(mappedData, record.id);
@@ -858,6 +884,18 @@ const processLandRecord = async (record) => {
       return { success: false, skipped: false };
     }
     
+    // ========== 추가: 의미있는 데이터 검증 ==========
+    const hasValidData = processedData["토지면적(㎡)"] || 
+                        processedData["공시지가(원/㎡)"] || 
+                        processedData["용도지역"];
+    
+    if (!hasValidData) {
+      logger.error(`❌ 의미있는 토지 데이터 없음: ${record.id}`);
+      recordRetryAttempt(record.id, false);
+      return { success: false, skipped: false };
+    }
+    // ========== 끝 ==========
+    
     // 에어테이블 업데이트
     const updated = await updateLandInfo(processedData, record.id);
     
@@ -1061,29 +1099,55 @@ cron.schedule('* * * * *', async () => {
   logger.debug('작업 확인 중...');
   
   try {
-    // 처리할 레코드가 있는지 확인
-    const buildingRecords = await airtableBase(process.env.AIRTABLE_BUILDING_TABLE)
+    // 샘플 레코드 조회 (최대 3개)
+    const buildingSamples = await airtableBase(process.env.AIRTABLE_BUILDING_TABLE)
       .select({
         view: process.env.AIRTABLE_BUILDING_VIEW,
-        maxRecords: 1
+        maxRecords: 3
       })
       .all();
     
-    const landRecords = await airtableBase(process.env.AIRTABLE_LAND_TABLE)
+    const landSamples = await airtableBase(process.env.AIRTABLE_LAND_TABLE)
       .select({
         view: process.env.AIRTABLE_LAND_VIEW,
-        maxRecords: 1
+        maxRecords: 3
       })
       .all();
     
-    // 처리할 레코드가 있는 경우에만 작업 실행
-    if (buildingRecords.length > 0 || landRecords.length > 0) {
-      logger.info('처리할 레코드 발견, 작업 실행 중...');
-      await runAllJobs();
-    } else {
-      // 처리할 데이터가 없을 때는 debug 레벨로만 로깅
+    // 레코드가 없으면 종료
+    if (buildingSamples.length === 0 && landSamples.length === 0) {
       logger.debug('처리할 레코드 없음, 작업 건너뜀');
+      return;
     }
+    
+    // ========== 추가: 모든 레코드가 건너뛴 상태인지 확인 ==========
+    const buildingAllSkipped = buildingSamples.length === 0 || buildingSamples.every(record => {
+      return !canRetry(record.id);
+    });
+    
+    const landAllSkipped = landSamples.length === 0 || landSamples.every(record => {
+      return !canRetry(record.id);
+    });
+    
+    // 건축물과 토지 모두 건너뛴 상태면 작업 중단
+    if (buildingAllSkipped && landAllSkipped) {
+      logger.debug('✅ 모든 레코드가 최대 재시도 횟수 초과 상태, 작업 건너뜀');
+      return;
+    }
+    // ========== 끝 ==========
+    
+    logger.info('🎯 처리할 레코드 발견, 작업 실행 중...');
+    
+    // 건축물 작업 (처리 가능한 레코드가 있을 때만)
+    if (!buildingAllSkipped && buildingSamples.length > 0) {
+      await runBuildingJob();
+    }
+    
+    // 토지 작업 (처리 가능한 레코드가 있을 때만)
+    if (!landAllSkipped && landSamples.length > 0) {
+      await runLandJob();
+    }
+    
   } catch (error) {
     logger.error('작업 확인 중 오류 발생:', error.message);
   }

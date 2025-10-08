@@ -1,0 +1,673 @@
+[2025-10-02T00:19:12.088Z] [ERROR] [ERROR] 작업 확인 중 오류 발생: An unexpected error occurred
+[2025-10-02T00:19:12.089Z] [ERROR] 작업 확인 중 오류 발생: An unexpected error occurred
+[2025-10-02T07:01:01.659Z] [INFO] [INFO] 🎯 처리할 레코드 발견, 작업 실행 중...
+[2025-10-02T07:01:01.661Z] [INFO] 🎯 처리할 레코드 발견, 작업 실행 중...
+[2025-10-02T07:01:01.662Z] [INFO] [INFO] 🚀 건축물 정보 수집 작업 시작...
+[2025-10-02T07:01:01.662Z] [INFO] 🚀 건축물 정보 수집 작업 시작...
+[2025-10-02T07:01:02.448Z] [INFO] [INFO] 📋 뷰에서 2개 건축물 레코드 발견
+[2025-10-02T07:01:02.448Z] [INFO] 📋 뷰에서 2개 건축물 레코드 발견
+[2025-10-02T07:01:02.450Z] [INFO] [INFO] 
+📍 [1/2] 건축물 레코드 처리 중: rec5sOgmCUon5UrpB
+[2025-10-02T07:01:02.450Z] [INFO] 
+📍 [1/2] 건축물 레코드 처리 중: rec5sOgmCUon5UrpB
+[2025-10-02T07:01:02.450Z] [INFO] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 1/5): rec5sOgmCUon5UrpB - 
+[2025-10-02T07:01:02.450Z] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 1/5): rec5sOgmCUon5UrpB - 
+[2025-10-02T07:01:02.452Z] [ERROR] [ERROR] 주소 파싱 실패: 주소 없음
+[2025-10-02T07:01:02.452Z] [ERROR] 주소 파싱 실패: 주소 없음
+[2025-10-02T07:01:02.453Z] [INFO] [INFO] 재시도 기록: rec5sOgmCUon5UrpB - 시도 1/5
+[2025-10-02T07:01:02.453Z] [INFO] 재시도 기록: rec5sOgmCUon5UrpB - 시도 1/5
+[2025-10-02T07:01:03.454Z] [INFO] [INFO] 
+📍 [2/2] 건축물 레코드 처리 중: recuOm0PQsPDZnSdz
+[2025-10-02T07:01:03.454Z] [INFO] 
+📍 [2/2] 건축물 레코드 처리 중: recuOm0PQsPDZnSdz
+[2025-10-02T07:01:03.454Z] [INFO] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 1/5): recuOm0PQsPDZnSdz - 서초구 방배동 2739-9
+[2025-10-02T07:01:03.454Z] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 1/5): recuOm0PQsPDZnSdz - 서초구 방배동 2739-9
+[2025-10-02T07:01:03.457Z] [INFO] 주소 데이터로 건축물 코드 조회 요청: {"시군구":"서초구","법정동":"방배동","번":"2739","지":"0009","id":"recuOm0PQsPDZnSdz"}
+[2025-10-02T07:01:09.582Z] [INFO] Google 스크립트 API 응답: [{"시군구":"서초구","법정동":"방배동","번":"2739","지":"0009","시군구코드":11650,"법정동코드":10100}]
+[2025-10-02T07:02:01.783Z] [INFO] [INFO] 🎯 처리할 레코드 발견, 작업 실행 중...
+[2025-10-02T07:02:01.783Z] [INFO] 🎯 처리할 레코드 발견, 작업 실행 중...
+[2025-10-02T07:02:01.783Z] [INFO] [INFO] 🚀 건축물 정보 수집 작업 시작...
+[2025-10-02T07:02:01.783Z] [INFO] 🚀 건축물 정보 수집 작업 시작...
+[2025-10-02T07:02:02.417Z] [INFO] [INFO] 📋 뷰에서 2개 건축물 레코드 발견
+[2025-10-02T07:02:02.417Z] [INFO] 📋 뷰에서 2개 건축물 레코드 발견
+[2025-10-02T07:02:02.417Z] [INFO] [INFO] 
+📍 [1/2] 건축물 레코드 처리 중: rec5sOgmCUon5UrpB
+[2025-10-02T07:02:02.417Z] [INFO] 
+📍 [1/2] 건축물 레코드 처리 중: rec5sOgmCUon5UrpB
+[2025-10-02T07:02:02.417Z] [INFO] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 2/5): rec5sOgmCUon5UrpB - 
+[2025-10-02T07:02:02.417Z] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 2/5): rec5sOgmCUon5UrpB - 
+[2025-10-02T07:02:02.417Z] [ERROR] [ERROR] 주소 파싱 실패: 주소 없음
+[2025-10-02T07:02:02.417Z] [ERROR] 주소 파싱 실패: 주소 없음
+[2025-10-02T07:02:02.417Z] [INFO] [INFO] 재시도 기록: rec5sOgmCUon5UrpB - 시도 2/5
+[2025-10-02T07:02:02.417Z] [INFO] 재시도 기록: rec5sOgmCUon5UrpB - 시도 2/5
+[2025-10-02T07:02:03.417Z] [INFO] [INFO] 
+📍 [2/2] 건축물 레코드 처리 중: recuOm0PQsPDZnSdz
+[2025-10-02T07:02:03.417Z] [INFO] 
+📍 [2/2] 건축물 레코드 처리 중: recuOm0PQsPDZnSdz
+[2025-10-02T07:02:03.417Z] [INFO] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 1/5): recuOm0PQsPDZnSdz - 서초구 방배동 2739-9
+[2025-10-02T07:02:03.418Z] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 1/5): recuOm0PQsPDZnSdz - 서초구 방배동 2739-9
+[2025-10-02T07:02:03.418Z] [INFO] 주소 데이터로 건축물 코드 조회 요청: {"시군구":"서초구","법정동":"방배동","번":"2739","지":"0009","id":"recuOm0PQsPDZnSdz"}
+[2025-10-02T07:02:06.950Z] [INFO] Google 스크립트 API 응답: [{"시군구":"서초구","법정동":"방배동","번":"2739","지":"0009","시군구코드":11650,"법정동코드":10100}]
+[2025-10-02T07:03:01.659Z] [INFO] [INFO] 🎯 처리할 레코드 발견, 작업 실행 중...
+[2025-10-02T07:03:01.659Z] [INFO] 🎯 처리할 레코드 발견, 작업 실행 중...
+[2025-10-02T07:03:01.659Z] [INFO] [INFO] 🚀 건축물 정보 수집 작업 시작...
+[2025-10-02T07:03:01.659Z] [INFO] 🚀 건축물 정보 수집 작업 시작...
+[2025-10-02T07:03:02.535Z] [INFO] [INFO] 📋 뷰에서 2개 건축물 레코드 발견
+[2025-10-02T07:03:02.535Z] [INFO] 📋 뷰에서 2개 건축물 레코드 발견
+[2025-10-02T07:03:02.535Z] [INFO] [INFO] 
+📍 [1/2] 건축물 레코드 처리 중: rec5sOgmCUon5UrpB
+[2025-10-02T07:03:02.535Z] [INFO] 
+📍 [1/2] 건축물 레코드 처리 중: rec5sOgmCUon5UrpB
+[2025-10-02T07:03:02.535Z] [INFO] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 3/5): rec5sOgmCUon5UrpB - 
+[2025-10-02T07:03:02.535Z] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 3/5): rec5sOgmCUon5UrpB - 
+[2025-10-02T07:03:02.535Z] [ERROR] [ERROR] 주소 파싱 실패: 주소 없음
+[2025-10-02T07:03:02.535Z] [ERROR] 주소 파싱 실패: 주소 없음
+[2025-10-02T07:03:02.535Z] [INFO] [INFO] 재시도 기록: rec5sOgmCUon5UrpB - 시도 3/5
+[2025-10-02T07:03:02.536Z] [INFO] 재시도 기록: rec5sOgmCUon5UrpB - 시도 3/5
+[2025-10-02T07:03:03.537Z] [INFO] [INFO] 
+📍 [2/2] 건축물 레코드 처리 중: recuOm0PQsPDZnSdz
+[2025-10-02T07:03:03.537Z] [INFO] 
+📍 [2/2] 건축물 레코드 처리 중: recuOm0PQsPDZnSdz
+[2025-10-02T07:03:03.537Z] [INFO] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 1/5): recuOm0PQsPDZnSdz - 서초구 방배동 2739-9
+[2025-10-02T07:03:03.537Z] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 1/5): recuOm0PQsPDZnSdz - 서초구 방배동 2739-9
+[2025-10-02T07:03:03.537Z] [INFO] 주소 데이터로 건축물 코드 조회 요청: {"시군구":"서초구","법정동":"방배동","번":"2739","지":"0009","id":"recuOm0PQsPDZnSdz"}
+[2025-10-02T07:03:08.625Z] [INFO] Google 스크립트 API 응답: [{"시군구":"서초구","법정동":"방배동","번":"2739","지":"0009","시군구코드":11650,"법정동코드":10100}]
+[2025-10-02T07:03:19.237Z] [ERROR] [ERROR] Error fetching building data from public API: connect ETIMEDOUT 27.101.215.194:443
+[2025-10-02T07:03:19.237Z] [ERROR] Error fetching building data from public API: connect ETIMEDOUT 27.101.215.194:443
+[2025-10-02T07:03:19.238Z] [ERROR] [ERROR] ❌ 건축물 API 응답 없음: recuOm0PQsPDZnSdz
+[2025-10-02T07:03:19.238Z] [ERROR] ❌ 건축물 API 응답 없음: recuOm0PQsPDZnSdz
+[2025-10-02T07:03:19.238Z] [INFO] [INFO] 재시도 기록: recuOm0PQsPDZnSdz - 시도 1/5
+[2025-10-02T07:03:19.238Z] [INFO] 재시도 기록: recuOm0PQsPDZnSdz - 시도 1/5
+[2025-10-02T07:03:19.238Z] [INFO] [INFO] 
+🎉 건축물 작업 완료!
+[2025-10-02T07:03:19.238Z] [INFO] 
+🎉 건축물 작업 완료!
+[2025-10-02T07:03:19.238Z] [INFO] [INFO] 📊 처리 결과: 2개 중 0개 성공, 2개 실패, 0개 건너뜀
+[2025-10-02T07:03:19.238Z] [INFO] 📊 처리 결과: 2개 중 0개 성공, 2개 실패, 0개 건너뜀
+[2025-10-02T07:03:19.238Z] [INFO] [INFO] 📈 성공률: 0.0%
+[2025-10-02T07:03:19.238Z] [INFO] 📈 성공률: 0.0%
+[2025-10-02T07:03:19.238Z] [INFO] [INFO] 🚀 토지 정보 수집 작업 시작...
+[2025-10-02T07:03:19.238Z] [INFO] 🚀 토지 정보 수집 작업 시작...
+[2025-10-02T07:03:20.181Z] [INFO] [INFO] 📋 뷰에서 1개 토지 레코드 발견
+[2025-10-02T07:03:20.181Z] [INFO] 📋 뷰에서 1개 토지 레코드 발견
+[2025-10-02T07:03:20.183Z] [INFO] [INFO] 
+📍 [1/1] 토지 레코드 처리 중: recuOm0PQsPDZnSdz
+[2025-10-02T07:03:20.184Z] [INFO] 
+📍 [1/1] 토지 레코드 처리 중: recuOm0PQsPDZnSdz
+[2025-10-02T07:03:20.184Z] [INFO] [INFO] 🌍 토지 레코드 처리 시작 (시도 2/5): recuOm0PQsPDZnSdz - 서초구 방배동 2739-9
+[2025-10-02T07:03:20.184Z] [INFO] 🌍 토지 레코드 처리 시작 (시도 2/5): recuOm0PQsPDZnSdz - 서초구 방배동 2739-9
+[2025-10-02T07:03:20.184Z] [INFO] 주소 데이터로 건축물 코드 조회 요청: {"시군구":"서초구","법정동":"방배동","번":"2739","지":"0009","id":"recuOm0PQsPDZnSdz"}
+[2025-10-02T07:03:24.909Z] [INFO] Google 스크립트 API 응답: [{"시군구":"서초구","법정동":"방배동","번":"2739","지":"0009","시군구코드":11650,"법정동코드":10100}]
+[2025-10-02T07:03:24.910Z] [INFO] VWorld API로 토지 정보 조회 요청 - PNU: 1165010100127390009
+[2025-10-02T07:03:24.917Z] [INFO] VWorld API 요청 (2024년): http://api.vworld.kr/ned/data/getLandCharacteristics?key=F76DB7F2-E8D8-313C-8B7D-158533CA0425&domain=localhost&pnu=1165010100127390009&stdrYear=2024&format=xml&numOfRows=10&pageNo=1
+[2025-10-02T07:03:24.949Z] [INFO] VWorld API XML 응답 (2024년): <response><numOfRows>10</numOfRows><pageNo>1</pageNo><totalCount>2</totalCount><fields><field><pnu>1165010100127390009</pnu><ldCode>1165010100</ldCode><ldCodeNm>서울특별시 서초구 방배동</ldCodeNm><regstrSeCode>1</regstrSeCode><regstrSeCodeNm>일반</regstrSeCodeNm><mnnmSlno>2739-9</mnnmSlno><ladSn>8290</ladSn><stdrYear>2024</stdrYear><stdrMt>01</stdrMt><lndcgrCode>08</lndcgrCode><lndcgrCodeNm>대</lndcgrCodeNm><lndpclAr>309</lndpclAr><prposArea1>11</prposArea1><prposArea1Nm>제1종전용주거지역</prposArea1Nm><prposArea2>00</prposArea2><prposArea2Nm>지정되지않음</prposArea2Nm><ladUseSittn>110</ladUseSittn><ladUseSittnNm>단독</ladUseSittnNm><tpgrphHgCode>02</tpgrphHgCode><tpgrphHgCodeNm>평지</tpgrphHgCodeNm><tpgrphFrmCode>03</tpgrphFrmCode><tpgrphFrmCodeNm>세장형</tpgrphFrmCodeNm><roadSideCode>07</roadSideCode><roadSideCodeNm>소로각지</roadSideCodeNm><pblntfPclnd>4867000</pblntfPclnd><lastUpdtDt>2024-07-30</lastUpdtDt></field><field><pnu>1165010100127390009</pnu><ldCode>1165010100</ldCode><ldCodeNm>서울특별시 서초구 방배동</ldCodeNm><regstrSeCode>1</regstrSeCode><regstrSeCodeNm>일반</regstrSeCodeNm><mnnmSlno>2739-9</mnnmSlno><ladSn>8290</ladSn><stdrYear>2024</stdrYear><stdrMt>01</stdrMt><lndcgrCode>08</lndcgrCode><lndcgrCodeNm>대</lndcgrCodeNm><lndpclAr>309</lndpclAr><prposArea1>11</prposArea1><prposArea1Nm>제1종전용주거지역</prposArea1Nm><prposArea2>00</prposArea2><prposArea2Nm>지정되지않음</prposArea2Nm><ladUseSittn>110</ladUseSittn><ladUseSittnNm>단독</ladUseSittnNm><tpgrphHgCode>02</tpgrphHgCode><tpgrphHgCodeNm>평지</tpgrphHgCodeNm><tpgrphFrmCode>03</tpgrphFrmCode><tpgrphFrmCodeNm>세로장방</tpgrphFrmCodeNm><roadSideCode>07</roadSideCode><roadSideCodeNm>소로각지</roadSideCodeNm><pblntfPclnd>4867000</pblntfPclnd><lastUpdtDt>2025-01-16</lastUpdtDt></field></fields></response>
+[2025-10-02T07:03:24.952Z] [INFO] 변환된 JSON 데이터: {
+  "response": {
+    "numOfRows": {
+      "_text": "10"
+    },
+    "pageNo": {
+      "_text": "1"
+    },
+    "totalCount": {
+      "_text": "2"
+    },
+    "fields": {
+      "field": [
+        {
+          "pnu": {
+            "_text": "1165010100127390009"
+          },
+          "ldCode": {
+            "_text": "1165010100"
+          },
+          "ldCodeNm": {
+            "_text": "서울특별시 서초구 방배동"
+          },
+          "regstrSeCode": {
+            "_text": "1"
+          },
+          "regstrSeCodeNm": {
+            "_text": "일반"
+          },
+          "mnnmSlno": {
+            "_text": "2739-9"
+          },
+          "ladSn": {
+            "_text": "8290"
+          },
+          "stdrYear": {
+            "_text": "2024"
+          },
+          "stdrMt": {
+            "_text": "01"
+          },
+          "lndcgrCode": {
+            "_text": "08"
+          },
+          "lndcgrCodeNm": {
+            "_text": "대"
+          },
+          "lndpclAr": {
+            "_text": "309"
+          },
+          "prposArea1": {
+            "_text": "11"
+          },
+          "prposArea1Nm": {
+            "_text": "제1종전용주거지역"
+          },
+          "prposArea2": {
+            "_text": "00"
+          },
+          "prposArea2Nm": {
+            "_text": "지정되지않음"
+          },
+          "ladUseSittn": {
+            "_text": "110"
+          },
+          "ladUseSittnNm": {
+            "_text": "단독"
+          },
+          "tpgrphHgCode": {
+            "_text": "02"
+          },
+          "tpgrphHgCodeNm": {
+            "_text": "평지"
+          },
+          "tpgrphFrmCode": {
+            "_text": "03"
+          },
+          "tpgrphFrmCodeNm": {
+            "_text": "세장형"
+          },
+          "roadSideCode": {
+            "_text": "07"
+          },
+          "roadSideCodeNm": {
+            "_text": "소로각지"
+          },
+          "pblntfPclnd": {
+            "_text": "4867000"
+          },
+          "lastUpdtDt": {
+            "_text": "2024-07-30"
+          }
+        },
+        {
+          "pnu": {
+            "_text": "1165010100127390009"
+          },
+          "ldCode": {
+            "_text": "1165010100"
+          },
+          "ldCodeNm": {
+            "_text": "서울특별시 서초구 방배동"
+          },
+          "regstrSeCode": {
+            "_text": "1"
+          },
+          "regstrSeCodeNm": {
+            "_text": "일반"
+          },
+          "mnnmSlno": {
+            "_text": "2739-9"
+          },
+          "ladSn": {
+            "_text": "8290"
+          },
+          "stdrYear": {
+            "_text": "2024"
+          },
+          "stdrMt": {
+            "_text": "01"
+          },
+          "lndcgrCode": {
+            "_text": "08"
+          },
+          "lndcgrCodeNm": {
+            "_text": "대"
+          },
+          "lndpclAr": {
+            "_text": "309"
+          },
+          "prposArea1": {
+            "_text": "11"
+          },
+          "prposArea1Nm": {
+            "_text": "제1종전용주거지역"
+          },
+          "prposArea2": {
+            "_text": "00"
+          },
+          "prposArea2Nm": {
+            "_text": "지정되지않음"
+          },
+          "ladUseSittn": {
+            "_text": "110"
+          },
+          "ladUseSittnNm": {
+            "_text": "단독"
+          },
+          "tpgrphHgCode": {
+            "_text": "02"
+          },
+          "tpgrphHgCodeNm": {
+            "_text": "평지"
+          },
+          "tpgrphFrmCode": {
+            "_text": "03"
+          },
+          "tpgrphFrmCodeNm": {
+            "_text": "세로장방"
+          },
+          "roadSideCode": {
+            "_text": "07"
+          },
+          "roadSideCodeNm": {
+            "_text": "소로각지"
+          },
+          "pblntfPclnd": {
+            "_text": "4867000"
+          },
+          "lastUpdtDt": {
+            "_text": "2025-01-16"
+          }
+        }
+      ]
+    }
+  }
+}
+[2025-10-02T07:03:24.953Z] [INFO] 2024년 데이터 발견! (총 2건)
+[2025-10-02T07:03:24.954Z] [INFO] VWorld API 응답 데이터 추출 시작
+[2025-10-02T07:03:24.954Z] [INFO] 추출된 토지 데이터: {
+  "pnu": {
+    "_text": "1165010100127390009"
+  },
+  "ldCode": {
+    "_text": "1165010100"
+  },
+  "ldCodeNm": {
+    "_text": "서울특별시 서초구 방배동"
+  },
+  "regstrSeCode": {
+    "_text": "1"
+  },
+  "regstrSeCodeNm": {
+    "_text": "일반"
+  },
+  "mnnmSlno": {
+    "_text": "2739-9"
+  },
+  "ladSn": {
+    "_text": "8290"
+  },
+  "stdrYear": {
+    "_text": "2024"
+  },
+  "stdrMt": {
+    "_text": "01"
+  },
+  "lndcgrCode": {
+    "_text": "08"
+  },
+  "lndcgrCodeNm": {
+    "_text": "대"
+  },
+  "lndpclAr": {
+    "_text": "309"
+  },
+  "prposArea1": {
+    "_text": "11"
+  },
+  "prposArea1Nm": {
+    "_text": "제1종전용주거지역"
+  },
+  "prposArea2": {
+    "_text": "00"
+  },
+  "prposArea2Nm": {
+    "_text": "지정되지않음"
+  },
+  "ladUseSittn": {
+    "_text": "110"
+  },
+  "ladUseSittnNm": {
+    "_text": "단독"
+  },
+  "tpgrphHgCode": {
+    "_text": "02"
+  },
+  "tpgrphHgCodeNm": {
+    "_text": "평지"
+  },
+  "tpgrphFrmCode": {
+    "_text": "03"
+  },
+  "tpgrphFrmCodeNm": {
+    "_text": "세로장방"
+  },
+  "roadSideCode": {
+    "_text": "07"
+  },
+  "roadSideCodeNm": {
+    "_text": "소로각지"
+  },
+  "pblntfPclnd": {
+    "_text": "4867000"
+  },
+  "lastUpdtDt": {
+    "_text": "2025-01-16"
+  }
+}
+[2025-10-02T07:03:24.954Z] [INFO] _text 속성 제거 후 데이터: {
+  "pnu": "1165010100127390009",
+  "ldCode": "1165010100",
+  "ldCodeNm": "서울특별시 서초구 방배동",
+  "regstrSeCode": "1",
+  "regstrSeCodeNm": "일반",
+  "mnnmSlno": "2739-9",
+  "ladSn": "8290",
+  "stdrYear": "2024",
+  "stdrMt": "01",
+  "lndcgrCode": "08",
+  "lndcgrCodeNm": "대",
+  "lndpclAr": "309",
+  "prposArea1": "11",
+  "prposArea1Nm": "제1종전용주거지역",
+  "prposArea2": "00",
+  "prposArea2Nm": "지정되지않음",
+  "ladUseSittn": "110",
+  "ladUseSittnNm": "단독",
+  "tpgrphHgCode": "02",
+  "tpgrphHgCodeNm": "평지",
+  "tpgrphFrmCode": "03",
+  "tpgrphFrmCodeNm": "세로장방",
+  "roadSideCode": "07",
+  "roadSideCodeNm": "소로각지",
+  "pblntfPclnd": "4867000",
+  "lastUpdtDt": "2025-01-16"
+}
+[2025-10-02T07:03:24.955Z] [INFO] 토지 데이터 가공 시작: {
+  "pnu": "1165010100127390009",
+  "ldCode": "1165010100",
+  "ldCodeNm": "서울특별시 서초구 방배동",
+  "regstrSeCode": "1",
+  "regstrSeCodeNm": "일반",
+  "mnnmSlno": "2739-9",
+  "ladSn": "8290",
+  "stdrYear": "2024",
+  "stdrMt": "01",
+  "lndcgrCode": "08",
+  "lndcgrCodeNm": "대",
+  "lndpclAr": "309",
+  "prposArea1": "11",
+  "prposArea1Nm": "제1종전용주거지역",
+  "prposArea2": "00",
+  "prposArea2Nm": "지정되지않음",
+  "ladUseSittn": "110",
+  "ladUseSittnNm": "단독",
+  "tpgrphHgCode": "02",
+  "tpgrphHgCodeNm": "평지",
+  "tpgrphFrmCode": "03",
+  "tpgrphFrmCodeNm": "세로장방",
+  "roadSideCode": "07",
+  "roadSideCodeNm": "소로각지",
+  "pblntfPclnd": "4867000",
+  "lastUpdtDt": "2025-01-16"
+}
+[2025-10-02T07:03:24.956Z] [INFO] 가공된 토지 데이터: {
+  "지번 주소": "서초구 방배동 2739-9",
+  "토지면적(㎡)": 309,
+  "용도지역": "제1종전용주거지역",
+  "공시지가(원/㎡)": 4867000,
+  "토지정보업데이트": "2025-01-16T00:00:00.000Z"
+}
+[2025-10-02T07:03:24.956Z] [INFO] 업데이트할 토지 데이터 (레코드 recuOm0PQsPDZnSdz): {
+  "토지면적(㎡)": 309,
+  "공시지가(원/㎡)": 4867000,
+  "용도지역": "제1종전용주거지역"
+}
+[2025-10-02T07:03:25.902Z] [INFO] Updated Airtable land record recuOm0PQsPDZnSdz
+[2025-10-02T07:03:25.902Z] [INFO] [INFO] ✅ 레코드 성공, 재시도 이력 삭제: recuOm0PQsPDZnSdz
+[2025-10-02T07:03:25.902Z] [INFO] ✅ 레코드 성공, 재시도 이력 삭제: recuOm0PQsPDZnSdz
+[2025-10-02T07:03:25.903Z] [INFO] [INFO] ✅ 토지 레코드 처리 성공: recuOm0PQsPDZnSdz
+[2025-10-02T07:03:25.903Z] [INFO] ✅ 토지 레코드 처리 성공: recuOm0PQsPDZnSdz
+[2025-10-02T07:03:25.903Z] [INFO] [INFO] 
+🎉 토지 작업 완료!
+[2025-10-02T07:03:25.903Z] [INFO] 
+🎉 토지 작업 완료!
+[2025-10-02T07:03:25.903Z] [INFO] [INFO] 📊 처리 결과: 1개 중 1개 성공, 0개 실패, 0개 건너뜀
+[2025-10-02T07:03:25.903Z] [INFO] 📊 처리 결과: 1개 중 1개 성공, 0개 실패, 0개 건너뜀
+[2025-10-02T07:03:25.903Z] [INFO] [INFO] 📈 성공률: 100.0%
+[2025-10-02T07:03:25.903Z] [INFO] 📈 성공률: 100.0%
+[2025-10-02T07:04:01.597Z] [INFO] [INFO] 🎯 처리할 레코드 발견, 작업 실행 중...
+[2025-10-02T07:04:01.597Z] [INFO] 🎯 처리할 레코드 발견, 작업 실행 중...
+[2025-10-02T07:04:01.597Z] [INFO] [INFO] 🚀 건축물 정보 수집 작업 시작...
+[2025-10-02T07:04:01.597Z] [INFO] 🚀 건축물 정보 수집 작업 시작...
+[2025-10-02T07:04:02.253Z] [INFO] [INFO] 📋 뷰에서 2개 건축물 레코드 발견
+[2025-10-02T07:04:02.253Z] [INFO] 📋 뷰에서 2개 건축물 레코드 발견
+[2025-10-02T07:04:02.253Z] [INFO] [INFO] 
+📍 [1/2] 건축물 레코드 처리 중: rec5sOgmCUon5UrpB
+[2025-10-02T07:04:02.253Z] [INFO] 
+📍 [1/2] 건축물 레코드 처리 중: rec5sOgmCUon5UrpB
+[2025-10-02T07:04:02.253Z] [INFO] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 4/5): rec5sOgmCUon5UrpB - 
+[2025-10-02T07:04:02.253Z] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 4/5): rec5sOgmCUon5UrpB - 
+[2025-10-02T07:04:02.253Z] [ERROR] [ERROR] 주소 파싱 실패: 주소 없음
+[2025-10-02T07:04:02.253Z] [ERROR] 주소 파싱 실패: 주소 없음
+[2025-10-02T07:04:02.254Z] [INFO] [INFO] 재시도 기록: rec5sOgmCUon5UrpB - 시도 4/5
+[2025-10-02T07:04:02.254Z] [INFO] 재시도 기록: rec5sOgmCUon5UrpB - 시도 4/5
+[2025-10-02T07:04:03.254Z] [INFO] [INFO] 
+📍 [2/2] 건축물 레코드 처리 중: recuOm0PQsPDZnSdz
+[2025-10-02T07:04:03.254Z] [INFO] 
+📍 [2/2] 건축물 레코드 처리 중: recuOm0PQsPDZnSdz
+[2025-10-02T07:04:03.254Z] [INFO] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 1/5): recuOm0PQsPDZnSdz - 서초구 방배동 2739-9
+[2025-10-02T07:04:03.254Z] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 1/5): recuOm0PQsPDZnSdz - 서초구 방배동 2739-9
+[2025-10-02T07:04:03.259Z] [INFO] 주소 데이터로 건축물 코드 조회 요청: {"시군구":"서초구","법정동":"방배동","번":"2739","지":"0009","id":"recuOm0PQsPDZnSdz"}
+[2025-10-02T07:04:08.607Z] [INFO] Google 스크립트 API 응답: [{"시군구":"서초구","법정동":"방배동","번":"2739","지":"0009","시군구코드":11650,"법정동코드":10100}]
+[2025-10-02T07:04:16.574Z] [ERROR] [ERROR] Error fetching building data from public API: connect ETIMEDOUT 27.101.215.194:443
+[2025-10-02T07:04:16.575Z] [ERROR] Error fetching building data from public API: connect ETIMEDOUT 27.101.215.194:443
+[2025-10-02T07:04:16.575Z] [ERROR] [ERROR] ❌ 건축물 API 응답 없음: recuOm0PQsPDZnSdz
+[2025-10-02T07:04:16.575Z] [ERROR] ❌ 건축물 API 응답 없음: recuOm0PQsPDZnSdz
+[2025-10-02T07:04:16.575Z] [INFO] [INFO] 재시도 기록: recuOm0PQsPDZnSdz - 시도 1/5
+[2025-10-02T07:04:16.575Z] [INFO] 재시도 기록: recuOm0PQsPDZnSdz - 시도 1/5
+[2025-10-02T07:04:16.575Z] [INFO] [INFO] 
+🎉 건축물 작업 완료!
+[2025-10-02T07:04:16.575Z] [INFO] 
+🎉 건축물 작업 완료!
+[2025-10-02T07:04:16.575Z] [INFO] [INFO] 📊 처리 결과: 2개 중 0개 성공, 2개 실패, 0개 건너뜀
+[2025-10-02T07:04:16.575Z] [INFO] 📊 처리 결과: 2개 중 0개 성공, 2개 실패, 0개 건너뜀
+[2025-10-02T07:04:16.575Z] [INFO] [INFO] 📈 성공률: 0.0%
+[2025-10-02T07:04:16.575Z] [INFO] 📈 성공률: 0.0%
+[2025-10-02T07:04:16.576Z] [INFO] [INFO] 🚀 토지 정보 수집 작업 시작...
+[2025-10-02T07:04:16.576Z] [INFO] 🚀 토지 정보 수집 작업 시작...
+[2025-10-02T07:04:17.431Z] [INFO] [INFO] 📋 뷰에서 0개 토지 레코드 발견
+[2025-10-02T07:04:17.431Z] [INFO] 📋 뷰에서 0개 토지 레코드 발견
+[2025-10-02T07:04:17.431Z] [INFO] [INFO] ✅ 처리할 토지 레코드가 없습니다
+[2025-10-02T07:04:17.431Z] [INFO] ✅ 처리할 토지 레코드가 없습니다
+[2025-10-02T07:05:01.510Z] [INFO] [INFO] 🎯 처리할 레코드 발견, 작업 실행 중...
+[2025-10-02T07:05:01.510Z] [INFO] 🎯 처리할 레코드 발견, 작업 실행 중...
+[2025-10-02T07:05:01.510Z] [INFO] [INFO] 🚀 건축물 정보 수집 작업 시작...
+[2025-10-02T07:05:01.510Z] [INFO] 🚀 건축물 정보 수집 작업 시작...
+[2025-10-02T07:05:02.318Z] [INFO] [INFO] 📋 뷰에서 2개 건축물 레코드 발견
+[2025-10-02T07:05:02.318Z] [INFO] 📋 뷰에서 2개 건축물 레코드 발견
+[2025-10-02T07:05:02.318Z] [INFO] [INFO] 
+📍 [1/2] 건축물 레코드 처리 중: rec5sOgmCUon5UrpB
+[2025-10-02T07:05:02.318Z] [INFO] 
+📍 [1/2] 건축물 레코드 처리 중: rec5sOgmCUon5UrpB
+[2025-10-02T07:05:02.318Z] [INFO] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 5/5): rec5sOgmCUon5UrpB - 
+[2025-10-02T07:05:02.318Z] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 5/5): rec5sOgmCUon5UrpB - 
+[2025-10-02T07:05:02.318Z] [ERROR] [ERROR] 주소 파싱 실패: 주소 없음
+[2025-10-02T07:05:02.318Z] [ERROR] 주소 파싱 실패: 주소 없음
+[2025-10-02T07:05:02.319Z] [INFO] [WARN] ❌ 레코드 최대 재시도 횟수 도달: rec5sOgmCUon5UrpB (5회)
+[2025-10-02T07:05:02.319Z] [WARN] ❌ 레코드 최대 재시도 횟수 도달: rec5sOgmCUon5UrpB (5회)
+[2025-10-02T07:05:02.319Z] [INFO] [INFO] 재시도 기록: rec5sOgmCUon5UrpB - 시도 5/5
+[2025-10-02T07:05:02.319Z] [INFO] 재시도 기록: rec5sOgmCUon5UrpB - 시도 5/5
+[2025-10-02T07:05:03.319Z] [INFO] [INFO] 
+📍 [2/2] 건축물 레코드 처리 중: recuOm0PQsPDZnSdz
+[2025-10-02T07:05:03.319Z] [INFO] 
+📍 [2/2] 건축물 레코드 처리 중: recuOm0PQsPDZnSdz
+[2025-10-02T07:05:03.319Z] [INFO] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 2/5): recuOm0PQsPDZnSdz - 서초구 방배동 2739-9
+[2025-10-02T07:05:03.319Z] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 2/5): recuOm0PQsPDZnSdz - 서초구 방배동 2739-9
+[2025-10-02T07:05:03.322Z] [INFO] 주소 데이터로 건축물 코드 조회 요청: {"시군구":"서초구","법정동":"방배동","번":"2739","지":"0009","id":"recuOm0PQsPDZnSdz"}
+[2025-10-02T07:05:09.275Z] [INFO] Google 스크립트 API 응답: [{"시군구":"서초구","법정동":"방배동","번":"2739","지":"0009","시군구코드":11650,"법정동코드":10100}]
+[2025-10-02T07:05:18.014Z] [ERROR] [ERROR] Error fetching building data from public API: connect ETIMEDOUT 27.101.215.194:443
+[2025-10-02T07:05:18.014Z] [ERROR] Error fetching building data from public API: connect ETIMEDOUT 27.101.215.194:443
+[2025-10-02T07:05:18.014Z] [ERROR] [ERROR] ❌ 건축물 API 응답 없음: recuOm0PQsPDZnSdz
+[2025-10-02T07:05:18.014Z] [ERROR] ❌ 건축물 API 응답 없음: recuOm0PQsPDZnSdz
+[2025-10-02T07:05:18.014Z] [INFO] [INFO] 재시도 기록: recuOm0PQsPDZnSdz - 시도 2/5
+[2025-10-02T07:05:18.015Z] [INFO] 재시도 기록: recuOm0PQsPDZnSdz - 시도 2/5
+[2025-10-02T07:05:18.015Z] [INFO] [INFO] 
+🎉 건축물 작업 완료!
+[2025-10-02T07:05:18.015Z] [INFO] 
+🎉 건축물 작업 완료!
+[2025-10-02T07:05:18.015Z] [INFO] [INFO] 📊 처리 결과: 2개 중 0개 성공, 2개 실패, 0개 건너뜀
+[2025-10-02T07:05:18.015Z] [INFO] 📊 처리 결과: 2개 중 0개 성공, 2개 실패, 0개 건너뜀
+[2025-10-02T07:05:18.015Z] [INFO] [INFO] 📈 성공률: 0.0%
+[2025-10-02T07:05:18.015Z] [INFO] 📈 성공률: 0.0%
+[2025-10-02T07:05:18.015Z] [INFO] [INFO] 🚀 토지 정보 수집 작업 시작...
+[2025-10-02T07:05:18.015Z] [INFO] 🚀 토지 정보 수집 작업 시작...
+[2025-10-02T07:05:18.931Z] [INFO] [INFO] 📋 뷰에서 0개 토지 레코드 발견
+[2025-10-02T07:05:18.931Z] [INFO] 📋 뷰에서 0개 토지 레코드 발견
+[2025-10-02T07:05:18.931Z] [INFO] [INFO] ✅ 처리할 토지 레코드가 없습니다
+[2025-10-02T07:05:18.931Z] [INFO] ✅ 처리할 토지 레코드가 없습니다
+[2025-10-02T07:06:01.939Z] [INFO] [INFO] 🎯 처리할 레코드 발견, 작업 실행 중...
+[2025-10-02T07:06:01.940Z] [INFO] 🎯 처리할 레코드 발견, 작업 실행 중...
+[2025-10-02T07:06:01.940Z] [INFO] [INFO] 🚀 건축물 정보 수집 작업 시작...
+[2025-10-02T07:06:01.940Z] [INFO] 🚀 건축물 정보 수집 작업 시작...
+[2025-10-02T07:06:02.538Z] [INFO] [INFO] 📋 뷰에서 2개 건축물 레코드 발견
+[2025-10-02T07:06:02.538Z] [INFO] 📋 뷰에서 2개 건축물 레코드 발견
+[2025-10-02T07:06:02.538Z] [INFO] [INFO] 
+📍 [1/2] 건축물 레코드 처리 중: rec5sOgmCUon5UrpB
+[2025-10-02T07:06:02.538Z] [INFO] 
+📍 [1/2] 건축물 레코드 처리 중: rec5sOgmCUon5UrpB
+[2025-10-02T07:06:02.539Z] [INFO] [INFO] ⏭️ 건축물 레코드 건너뜀 (최대 재시도 횟수 초과): rec5sOgmCUon5UrpB
+[2025-10-02T07:06:02.539Z] [INFO] ⏭️ 건축물 레코드 건너뜀 (최대 재시도 횟수 초과): rec5sOgmCUon5UrpB
+[2025-10-02T07:06:03.539Z] [INFO] [INFO] 
+📍 [2/2] 건축물 레코드 처리 중: recuOm0PQsPDZnSdz
+[2025-10-02T07:06:03.539Z] [INFO] 
+📍 [2/2] 건축물 레코드 처리 중: recuOm0PQsPDZnSdz
+[2025-10-02T07:06:03.539Z] [INFO] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 3/5): recuOm0PQsPDZnSdz - 서초구 방배동 2739-9
+[2025-10-02T07:06:03.540Z] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 3/5): recuOm0PQsPDZnSdz - 서초구 방배동 2739-9
+[2025-10-02T07:06:03.540Z] [INFO] 주소 데이터로 건축물 코드 조회 요청: {"시군구":"서초구","법정동":"방배동","번":"2739","지":"0009","id":"recuOm0PQsPDZnSdz"}
+[2025-10-02T07:06:08.248Z] [INFO] Google 스크립트 API 응답: [{"시군구":"서초구","법정동":"방배동","번":"2739","지":"0009","시군구코드":11650,"법정동코드":10100}]
+[2025-10-02T07:06:19.454Z] [ERROR] [ERROR] Error fetching building data from public API: connect ETIMEDOUT 27.101.215.194:443
+[2025-10-02T07:06:19.454Z] [ERROR] Error fetching building data from public API: connect ETIMEDOUT 27.101.215.194:443
+[2025-10-02T07:06:19.454Z] [ERROR] [ERROR] ❌ 건축물 API 응답 없음: recuOm0PQsPDZnSdz
+[2025-10-02T07:06:19.454Z] [ERROR] ❌ 건축물 API 응답 없음: recuOm0PQsPDZnSdz
+[2025-10-02T07:06:19.455Z] [INFO] [INFO] 재시도 기록: recuOm0PQsPDZnSdz - 시도 3/5
+[2025-10-02T07:06:19.455Z] [INFO] 재시도 기록: recuOm0PQsPDZnSdz - 시도 3/5
+[2025-10-02T07:06:19.455Z] [INFO] [INFO] 
+🎉 건축물 작업 완료!
+[2025-10-02T07:06:19.455Z] [INFO] 
+🎉 건축물 작업 완료!
+[2025-10-02T07:06:19.455Z] [INFO] [INFO] 📊 처리 결과: 2개 중 0개 성공, 2개 실패, 0개 건너뜀
+[2025-10-02T07:06:19.455Z] [INFO] 📊 처리 결과: 2개 중 0개 성공, 2개 실패, 0개 건너뜀
+[2025-10-02T07:06:19.455Z] [INFO] [INFO] 📈 성공률: 0.0%
+[2025-10-02T07:06:19.455Z] [INFO] 📈 성공률: 0.0%
+[2025-10-02T07:07:01.928Z] [INFO] [INFO] 🎯 처리할 레코드 발견, 작업 실행 중...
+[2025-10-02T07:07:01.928Z] [INFO] 🎯 처리할 레코드 발견, 작업 실행 중...
+[2025-10-02T07:07:01.928Z] [INFO] [INFO] 🚀 건축물 정보 수집 작업 시작...
+[2025-10-02T07:07:01.928Z] [INFO] 🚀 건축물 정보 수집 작업 시작...
+[2025-10-02T07:07:02.823Z] [INFO] [INFO] 📋 뷰에서 2개 건축물 레코드 발견
+[2025-10-02T07:07:02.823Z] [INFO] 📋 뷰에서 2개 건축물 레코드 발견
+[2025-10-02T07:07:02.823Z] [INFO] [INFO] 
+📍 [1/2] 건축물 레코드 처리 중: rec5sOgmCUon5UrpB
+[2025-10-02T07:07:02.823Z] [INFO] 
+📍 [1/2] 건축물 레코드 처리 중: rec5sOgmCUon5UrpB
+[2025-10-02T07:07:02.824Z] [INFO] [INFO] ⏭️ 건축물 레코드 건너뜀 (최대 재시도 횟수 초과): rec5sOgmCUon5UrpB
+[2025-10-02T07:07:02.824Z] [INFO] ⏭️ 건축물 레코드 건너뜀 (최대 재시도 횟수 초과): rec5sOgmCUon5UrpB
+[2025-10-02T07:07:03.825Z] [INFO] [INFO] 
+📍 [2/2] 건축물 레코드 처리 중: recuOm0PQsPDZnSdz
+[2025-10-02T07:07:03.825Z] [INFO] 
+📍 [2/2] 건축물 레코드 처리 중: recuOm0PQsPDZnSdz
+[2025-10-02T07:07:03.825Z] [INFO] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 4/5): recuOm0PQsPDZnSdz - 서초구 방배동 2739-9
+[2025-10-02T07:07:03.825Z] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 4/5): recuOm0PQsPDZnSdz - 서초구 방배동 2739-9
+[2025-10-02T07:07:03.825Z] [INFO] 주소 데이터로 건축물 코드 조회 요청: {"시군구":"서초구","법정동":"방배동","번":"2739","지":"0009","id":"recuOm0PQsPDZnSdz"}
+[2025-10-02T07:07:09.460Z] [INFO] Google 스크립트 API 응답: [{"시군구":"서초구","법정동":"방배동","번":"2739","지":"0009","시군구코드":11650,"법정동코드":10100}]
+[2025-10-02T07:07:18.846Z] [ERROR] [ERROR] Error fetching building data from public API: connect ETIMEDOUT 27.101.215.194:443
+[2025-10-02T07:07:18.846Z] [ERROR] Error fetching building data from public API: connect ETIMEDOUT 27.101.215.194:443
+[2025-10-02T07:07:18.846Z] [ERROR] [ERROR] ❌ 건축물 API 응답 없음: recuOm0PQsPDZnSdz
+[2025-10-02T07:07:18.846Z] [ERROR] ❌ 건축물 API 응답 없음: recuOm0PQsPDZnSdz
+[2025-10-02T07:07:18.847Z] [INFO] [INFO] 재시도 기록: recuOm0PQsPDZnSdz - 시도 4/5
+[2025-10-02T07:07:18.847Z] [INFO] 재시도 기록: recuOm0PQsPDZnSdz - 시도 4/5
+[2025-10-02T07:07:22.629Z] [INFO] [INFO] 📧 실패 알림 이메일 발송 완료 (건축물): 1개 레코드
+[2025-10-02T07:07:22.629Z] [INFO] 📧 실패 알림 이메일 발송 완료 (건축물): 1개 레코드
+[2025-10-02T07:07:22.629Z] [INFO] [INFO] 
+🎉 건축물 작업 완료!
+[2025-10-02T07:07:22.629Z] [INFO] 
+🎉 건축물 작업 완료!
+[2025-10-02T07:07:22.629Z] [INFO] [INFO] 📊 처리 결과: 2개 중 0개 성공, 2개 실패, 0개 건너뜀
+[2025-10-02T07:07:22.629Z] [INFO] 📊 처리 결과: 2개 중 0개 성공, 2개 실패, 0개 건너뜀
+[2025-10-02T07:07:22.629Z] [INFO] [INFO] 📈 성공률: 0.0%
+[2025-10-02T07:07:22.629Z] [INFO] 📈 성공률: 0.0%
+[2025-10-02T07:08:01.901Z] [INFO] [INFO] 🎯 처리할 레코드 발견, 작업 실행 중...
+[2025-10-02T07:08:01.901Z] [INFO] 🎯 처리할 레코드 발견, 작업 실행 중...
+[2025-10-02T07:08:01.901Z] [INFO] [INFO] 🚀 건축물 정보 수집 작업 시작...
+[2025-10-02T07:08:01.901Z] [INFO] 🚀 건축물 정보 수집 작업 시작...
+[2025-10-02T07:08:02.732Z] [INFO] [INFO] 📋 뷰에서 2개 건축물 레코드 발견
+[2025-10-02T07:08:02.732Z] [INFO] 📋 뷰에서 2개 건축물 레코드 발견
+[2025-10-02T07:08:02.732Z] [INFO] [INFO] 
+📍 [1/2] 건축물 레코드 처리 중: rec5sOgmCUon5UrpB
+[2025-10-02T07:08:02.732Z] [INFO] 
+📍 [1/2] 건축물 레코드 처리 중: rec5sOgmCUon5UrpB
+[2025-10-02T07:08:02.732Z] [INFO] [INFO] ⏭️ 건축물 레코드 건너뜀 (최대 재시도 횟수 초과): rec5sOgmCUon5UrpB
+[2025-10-02T07:08:02.732Z] [INFO] ⏭️ 건축물 레코드 건너뜀 (최대 재시도 횟수 초과): rec5sOgmCUon5UrpB
+[2025-10-02T07:08:03.733Z] [INFO] [INFO] 
+📍 [2/2] 건축물 레코드 처리 중: recuOm0PQsPDZnSdz
+[2025-10-02T07:08:03.733Z] [INFO] 
+📍 [2/2] 건축물 레코드 처리 중: recuOm0PQsPDZnSdz
+[2025-10-02T07:08:03.733Z] [INFO] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 5/5): recuOm0PQsPDZnSdz - 서초구 방배동 2739-9
+[2025-10-02T07:08:03.733Z] [INFO] 🏗️ 건축물 레코드 처리 시작 (시도 5/5): recuOm0PQsPDZnSdz - 서초구 방배동 2739-9
+[2025-10-02T07:08:03.733Z] [INFO] 주소 데이터로 건축물 코드 조회 요청: {"시군구":"서초구","법정동":"방배동","번":"2739","지":"0009","id":"recuOm0PQsPDZnSdz"}
+[2025-10-02T07:08:07.820Z] [INFO] Google 스크립트 API 응답: [{"시군구":"서초구","법정동":"방배동","번":"2739","지":"0009","시군구코드":11650,"법정동코드":10100}]
+[2025-10-02T07:08:18.238Z] [ERROR] [ERROR] Error fetching building data from public API: connect ETIMEDOUT 27.101.215.194:443
+[2025-10-02T07:08:18.238Z] [ERROR] Error fetching building data from public API: connect ETIMEDOUT 27.101.215.194:443
+[2025-10-02T07:08:18.238Z] [ERROR] [ERROR] ❌ 건축물 API 응답 없음: recuOm0PQsPDZnSdz
+[2025-10-02T07:08:18.239Z] [ERROR] ❌ 건축물 API 응답 없음: recuOm0PQsPDZnSdz
+[2025-10-02T07:08:18.239Z] [INFO] [WARN] ❌ 레코드 최대 재시도 횟수 도달: recuOm0PQsPDZnSdz (5회)
+[2025-10-02T07:08:18.239Z] [WARN] ❌ 레코드 최대 재시도 횟수 도달: recuOm0PQsPDZnSdz (5회)
+[2025-10-02T07:08:18.239Z] [INFO] [INFO] 재시도 기록: recuOm0PQsPDZnSdz - 시도 5/5
+[2025-10-02T07:08:18.239Z] [INFO] 재시도 기록: recuOm0PQsPDZnSdz - 시도 5/5
+[2025-10-02T07:08:21.641Z] [INFO] [INFO] 📧 실패 알림 이메일 발송 완료 (건축물): 1개 레코드
+[2025-10-02T07:08:21.641Z] [INFO] 📧 실패 알림 이메일 발송 완료 (건축물): 1개 레코드
+[2025-10-02T07:08:21.641Z] [INFO] [INFO] 
+🎉 건축물 작업 완료!
+[2025-10-02T07:08:21.641Z] [INFO] 
+🎉 건축물 작업 완료!
+[2025-10-02T07:08:21.641Z] [INFO] [INFO] 📊 처리 결과: 2개 중 0개 성공, 1개 실패, 1개 건너뜀
+[2025-10-02T07:08:21.641Z] [INFO] 📊 처리 결과: 2개 중 0개 성공, 1개 실패, 1개 건너뜀
+[2025-10-02T07:08:21.641Z] [INFO] [INFO] 📈 성공률: 0.0%
+[2025-10-02T07:08:21.641Z] [INFO] 📈 성공률: 0.0%
+[2025-10-02T07:09:19.678Z] [ERROR] [ERROR] Error fetching building data from public API: connect ETIMEDOUT 27.101.215.194:443
+[2025-10-02T07:09:19.678Z] [ERROR] Error fetching building data from public API: connect ETIMEDOUT 27.101.215.194:443
+[2025-10-02T07:09:19.678Z] [ERROR] [ERROR] ❌ 건축물 API 응답 없음: recuOm0PQsPDZnSdz
+[2025-10-02T07:09:19.678Z] [ERROR] ❌ 건축물 API 응답 없음: recuOm0PQsPDZnSdz
+[2025-10-02T07:09:19.678Z] [INFO] [WARN] ❌ 레코드 최대 재시도 횟수 도달: recuOm0PQsPDZnSdz (6회)
+[2025-10-02T07:09:19.679Z] [WARN] ❌ 레코드 최대 재시도 횟수 도달: recuOm0PQsPDZnSdz (6회)
+[2025-10-02T07:09:19.679Z] [INFO] [INFO] 재시도 기록: recuOm0PQsPDZnSdz - 시도 6/5
+[2025-10-02T07:09:19.679Z] [INFO] 재시도 기록: recuOm0PQsPDZnSdz - 시도 6/5
+[2025-10-02T07:09:19.679Z] [INFO] [INFO] 
+🎉 건축물 작업 완료!
+[2025-10-02T07:09:19.679Z] [INFO] 
+🎉 건축물 작업 완료!
+[2025-10-02T07:09:19.679Z] [INFO] [INFO] 📊 처리 결과: 2개 중 0개 성공, 1개 실패, 1개 건너뜀
+[2025-10-02T07:09:19.679Z] [INFO] 📊 처리 결과: 2개 중 0개 성공, 1개 실패, 1개 건너뜀
+[2025-10-02T07:09:19.679Z] [INFO] [INFO] 📈 성공률: 0.0%
+[2025-10-02T07:09:19.679Z] [INFO] 📈 성공률: 0.0%
+[2025-10-02T07:10:17.022Z] [ERROR] [ERROR] Error fetching building data from public API: connect ETIMEDOUT 27.101.215.194:443
+[2025-10-02T07:10:17.023Z] [ERROR] Error fetching building data from public API: connect ETIMEDOUT 27.101.215.194:443
+[2025-10-02T07:10:17.023Z] [ERROR] [ERROR] ❌ 건축물 API 응답 없음: recuOm0PQsPDZnSdz
+[2025-10-02T07:10:17.023Z] [ERROR] ❌ 건축물 API 응답 없음: recuOm0PQsPDZnSdz
+[2025-10-02T07:10:17.023Z] [INFO] [WARN] ❌ 레코드 최대 재시도 횟수 도달: recuOm0PQsPDZnSdz (7회)
+[2025-10-02T07:10:17.023Z] [WARN] ❌ 레코드 최대 재시도 횟수 도달: recuOm0PQsPDZnSdz (7회)
+[2025-10-02T07:10:17.023Z] [INFO] [INFO] 재시도 기록: recuOm0PQsPDZnSdz - 시도 7/5
+[2025-10-02T07:10:17.023Z] [INFO] 재시도 기록: recuOm0PQsPDZnSdz - 시도 7/5
+[2025-10-02T07:10:17.023Z] [INFO] [INFO] 
+🎉 건축물 작업 완료!
+[2025-10-02T07:10:17.023Z] [INFO] 
+🎉 건축물 작업 완료!
+[2025-10-02T07:10:17.023Z] [INFO] [INFO] 📊 처리 결과: 2개 중 0개 성공, 1개 실패, 1개 건너뜀
+[2025-10-02T07:10:17.023Z] [INFO] 📊 처리 결과: 2개 중 0개 성공, 1개 실패, 1개 건너뜀
+[2025-10-02T07:10:17.023Z] [INFO] [INFO] 📈 성공률: 0.0%
+[2025-10-02T07:10:17.023Z] [INFO] 📈 성공률: 0.0%
